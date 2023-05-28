@@ -185,6 +185,78 @@ Route::post('/logout', [AuthController::class,'logout']);
 
 ///////////////////////////////////////
 
+* StoreUserRequest.php  :
+
+php artisan make:request StoreUserRequest
+
+- make authorize function is true // not false
+
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Validation\Rules\Password;
+use Illuminate\Foundation\Http\FormRequest;
+
+class StoreUserRequest extends FormRequest
+{
+
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+
+    public function rules(): array
+    {
+        return [
+
+            'name' => ['required','string','max:255'],
+            'email' => ['required','string','email','max:255','unique:users'],
+            'password' => ['required','confirmed',Password::defaults()],
+
+        ];
+    }
+}
+
+////////////////////////////////////////
+
+ * Login User Request (LoginUserRequest):
+
+    php artisan make:request LoginUserRequest
+
+    code in it :
+
+
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class LoginUserRequest extends FormRequest
+{
+
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+
+    public function rules(): array
+    {
+        return [
+
+            'email' => ['required','string','email','max:255',],
+            'password' => ['required','min:6'],
+        ];
+    }
+}
+
+
+////////////////////////////////////////////////
+
+*
 
 
 
