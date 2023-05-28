@@ -24,6 +24,25 @@ npm run dev
 
 php artisan serve
 
+
+/////////////////////////////////
+* Sanctum :
+
+
+# Link : https://www.youtube.com/watch?v=TzAJfjCn7Ks&pp=ygUfbGFyYXZlbCBzYW5jdHVtICBDb2RlIFdpdGggRGFyeQ%3D%3D
+# Link on Laravel Docs : https://laravel.com/docs/10.x/sanctum
+
+    composer require laravel/sanctum
+
+    php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+    php artisan migrate
+
+///////////////////////////////////
+
+
+
+
  */
 
 
