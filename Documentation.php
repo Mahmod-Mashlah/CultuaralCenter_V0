@@ -179,6 +179,15 @@ Route::post('/logout', [AuthController::class,'logout']);
 
 /////////////////////////////////////
 
+ TO show all routes in project code the command :
+
+    php artisan route:list
+
+///////////////////////////////////////
+
+
+
+
  */
 
 
