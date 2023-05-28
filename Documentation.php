@@ -40,6 +40,43 @@ php artisan serve
 
 ///////////////////////////////////
 
+* Traits Folder (App\Traits)
+* HttpResponse.php  (App\Traits\HttpResponses)
+
+make in app folder the (Traits) Folder and make a file (HttpResponses.php) code that in it :
+
+<?php
+
+namespace App\Traits ;
+
+trait HttpResponse {
+
+    protected function success($data ,$message=null ,$code=200)
+    {
+        return response()->json([
+
+            'status' => 'Request was successful',
+            'message' => $message,
+            'data' => $data,
+
+        ],$code);
+    }
+
+    protected function error($data ,$message=null ,$code)
+    {
+        return response()->json([
+
+            'status' => 'Error has occoured !',
+            'message' => $message,
+            'data' => $data,
+
+        ],$code);
+    }
+}
+
+//////////////////////////////////////
+
+*
 
 
 
