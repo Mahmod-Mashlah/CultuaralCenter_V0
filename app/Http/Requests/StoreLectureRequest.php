@@ -33,6 +33,7 @@ class StoreLectureRequest extends FormRequest
             'end_time'           => ['required','date_format:H:i A', 'in:00,30'],
             'target_people'      => ['required','string','max:255'],
             'teacher_experience' => ['required','string','max:255'],
+
         ];
     }
 }
