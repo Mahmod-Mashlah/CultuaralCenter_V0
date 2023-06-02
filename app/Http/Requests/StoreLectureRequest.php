@@ -11,7 +11,7 @@ class StoreLectureRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,17 @@ class StoreLectureRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required','max:255'],
+            'description' => ['required','string'],
+            'priority' => ['required','in:low,medium,high'],
+
+            'name'               => ['required','max:255',],
+            'type'               => ['required','string','in:ثقافية,تربوية,دينية,اجتماعية,اقتصادية,علمية,فلسفية,تقنية,تاريخية,سياسية',],
+            'start_date'         => ['required','date',],
+            'start_time'         => ['required','date_format:H:i A', 'in:00,30'],
+            'end_time'           => ['required','date_format:H:i A', 'in:00,30'],
+            'target_people'      => ['required','string','max:255'],
+            'teacher_experience' => ['required','string','max:255'],
         ];
     }
 }
