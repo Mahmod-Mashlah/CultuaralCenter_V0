@@ -26,7 +26,7 @@ class UpdateLectureRequest extends FormRequest
 
             'name'               => ['required','max:255',],
             'type'               => ['required','string','in:ثقافية,تربوية,دينية,اجتماعية,اقتصادية,علمية,فلسفية,تقنية,تاريخية,سياسية',],
-            'start_date'         => ['required','date',],
+            'start_date'         => ['required','date','date_format:d-m-Y','after:1-8-2023'],
             'start_time'         => ['required','date_format:H:i A', 'in:00,30'],
             'end_time'           => ['required','date_format:H:i A', 'in:00,30'],
             'target_people'      => ['required','string','max:255'],
