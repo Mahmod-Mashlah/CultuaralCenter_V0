@@ -1,9 +1,10 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
+            <h5 class="CenterName text-center mb-4">المركز الثقافي</h5>
             <x-authentication-card-logo />
         </x-slot>
-
+        <h5 class="CenterName text-center">تسجيل الدخول</h5>
         <x-validation-errors class="mb-4" />
 
         @if (session('status'))
