@@ -22,9 +22,7 @@ class UpdateLectureRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required','max:255'],
-            'description' => ['required','string'],
-            'priority' => ['required','in:low,medium,high'],
+
 
             'name'               => ['required','max:255',],
             'type'               => ['required','string','in:ثقافية,تربوية,دينية,اجتماعية,اقتصادية,علمية,فلسفية,تقنية,تاريخية,سياسية',],
