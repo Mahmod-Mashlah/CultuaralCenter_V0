@@ -255,8 +255,21 @@ class LoginUserRequest extends FormRequest
 
 
 ////////////////////////////////////////////////
+  Make Lecture all :
 
-*
+  php artisan make:model Lecture -a
+
+  /////////////////////////////////////
+
+TO show all routes in project code the command :
+
+    php artisan route:list
+
+///////////////////////////////////////////////
+
+
+
+
 
 
 
