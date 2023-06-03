@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Lecture;
-use App\Http\Requests\StoreLectureRequest;
-use App\Http\Requests\UpdateLectureRequest;
-use App\Http\Resources\LecturesResource;
 use App\Traits\HttpResponse;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\LecturesResource;
+use App\Http\Requests\StoreLectureRequest;
+use App\Http\Requests\UpdateLectureRequest;
+
 class LectureController extends Controller
 {
     use HttpResponse ;
@@ -25,8 +27,10 @@ class LectureController extends Controller
     public function store(StoreLectureRequest $request)
      {
         $request -> validated($request->all() );
-
+        // $request->start_date=Carbon::createFromFormat('j-n-Y', $request->start_date)->format('j-n-Y');
+        //  dd($request->start_date);
         $lecture = Lecture::create([
+
 
             // 'user_id' => Auth::user()->id ,
 
