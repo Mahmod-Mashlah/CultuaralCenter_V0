@@ -18,10 +18,13 @@ Route::post('/login', [AuthController::class,'login']);
 
 // Lecture Routes :
   Route::apiResource('/lectures', LectureController::class);
-
 //  Route::post('/lectures/store',[LectureController::class,'store']);
 
- //  Route::post('/add-lecture',[LectureController::class,'store']);
+// Play Routes :
+  Route::apiResource('/plays', PlayController::class);
+//  Route::get('/plays',[PlayController::class,'index']);
+
+
 
 // protected Routes (With Auth)
 
