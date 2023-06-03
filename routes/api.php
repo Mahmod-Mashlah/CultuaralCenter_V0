@@ -17,7 +17,11 @@ Route::post('/login', [AuthController::class,'login']);
 
 
 // Lecture Routes :
-Route::resource('/lectures', LectureController::class);
+  Route::apiResource('/lectures', LectureController::class);
+
+//  Route::post('/lectures/store',[LectureController::class,'store']);
+
+ //  Route::post('/add-lecture',[LectureController::class,'store']);
 
 // protected Routes (With Auth)
 

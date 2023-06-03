@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('type');
-            $table->date('start_date');
+            $table->date('start_date')
+                                              ->format('d-m-Y')
+                                                ->min('01-01-2023');
             $table->time('start_time');
             $table->time('end_time');
             $table->string('target_people');

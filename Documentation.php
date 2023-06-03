@@ -275,8 +275,19 @@ php artisan make:resource LecturesResource
 
 ////////////////////////////////////////////
 
+php artisan cache:clear
 
+php artisan optimize:clear
 
+php artisan optimize
+
+php artisan route:clear
+///////////////////////////////////////////
+Time and Date Validation Request :
+composer require vdhicts/laravel-validation-rules
+
+- in validation Request :
+'date_field' => [new DateHasSpecificMinutes([15, 45])]
 
  */
 
