@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LectureController;
+use App\Http\Controllers\PlayController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
