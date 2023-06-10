@@ -289,6 +289,14 @@ composer require vdhicts/laravel-validation-rules
 - in validation Request :
 'date_field' => [new DateHasSpecificMinutes([15, 45])]
 
+////////////////////////////////////////////
+
+git username & email
+
+git config --global user.name "Mahmod-Mashlah"
+git config --global user.email "mashlahmahmod@gmail.com"
+
+
  */
 
 
