@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Lecture;
 use App\Traits\HttpResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\LecturesResource;
 use App\Http\Requests\StoreLectureRequest;
@@ -23,6 +24,51 @@ class LectureController extends Controller
         //     Lecture::where('user_id',Auth::user()->id)->get() ) ; // get lectures thats users are authenticated
         return LecturesResource::collection(Lecture::all());
     }
+
+    public function nameSearch($name)
+    {
+        //
+        return Lecture::where("name","like","%".$name."%")->get();
+    }
+
+    public function search(Request $request)
+{
+    $query = Lecture::query();
+
+    if ($request->has('name')) {
+        $query->where('name', 'like', '%' . $request->input('name') . '%');
+    }
+
+    if ($request->has('type')) {
+        $query->where('type', 'like', '%' . $request->input('type') . '%');
+    }
+
+    if ($request->has('start_date')) {
+        $query->where('start_date', '=', $request->input('start_date') );
+    }
+    if ($request->has('start_time')) {
+        $query->where('start_time', '=', $request->input('start_time') );
+    }
+    if ($request->has('end_time')) {
+        $query->where('end_time', '=', $request->input('end_time') );
+    }
+
+    if ($request->has('target_people')) {
+        $query->where('target_people', 'like', '%' . $request->input('target_people') . '%');
+    }
+
+    if ($request->has('teacher_experience')) {
+        $query->where('teacher_experience', 'like', '%' . $request->input('teacher_experience') . '%');
+    }
+
+    $lecture = $query->get();
+
+    // return view('lecture.index', compact('lecture'));
+    return $this->success($lecture);
+
+
+
+}
 
     public function store(StoreLectureRequest $request)
      {
@@ -43,7 +89,7 @@ class LectureController extends Controller
             'teacher_experience' => $request-> teacher_experience,
         ]);
 
-        return new LecturesResource($lecture) ;
+        return $this->success( new LecturesResource($lecture) , 'Lecture has added succussfully')  ;
     }
 
 
@@ -77,7 +123,8 @@ class LectureController extends Controller
     {
         // way 1 :
             $lecture->delete();
-            return $this->success('Lecture was Deleted Successfuly ',null,204);
+            // return $this->success('Lecture was Deleted Successfuly ','lecture was deleted successfully',204);
+            return $this->success('Lecture was Deleted Successfuly ','lecture was deleted successfully',200);
 
         // way 2 : (it is best to do it in Show & Update functions [Implement Private function below] )
 

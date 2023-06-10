@@ -24,7 +24,7 @@ class StoreLectureRequest extends FormRequest
         return [
 
 
-            'name'               => ['required','max:255',],
+            'name'               => ['required','unique:lectures,name','max:255',],
             'type'               => ['required','string','in:ثقافية,تربوية,دينية,اجتماعية,اقتصادية,علمية,فلسفية,تقنية,تاريخية,سياسية',],
             'start_date'         => ['required','date'/*,'date_format:j-n-Y'*/,'after:1-8-2023'],
             'start_time'         => ['required','date_format:H:i',

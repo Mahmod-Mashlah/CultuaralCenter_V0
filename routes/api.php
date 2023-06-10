@@ -18,8 +18,28 @@ Route::post('/login', [AuthController::class,'login']);
 
 
 // Lecture Routes :
+
   Route::apiResource('/lectures', LectureController::class);
 //  Route::post('/lectures/store',[LectureController::class,'store']);
+
+ Route::post('/lectures/search', [LectureController::class, 'search']);//
+
+// Route::post('/search', function(Request $request) {
+//     $query = $request->input('query');
+//     $posts = Post::where('title', 'LIKE', '%'.$query.'%')
+//                 ->orWhere('body', 'LIKE', '%'.$query.'%')
+//                 ->get();
+//     return view('search-results', ['posts' => $posts]);
+// });
+
+// Route::post('/search', function(Request $request) {
+//     $query = $request->input('query');
+//     $posts = Post::where('title', 'LIKE', '%'.$query.'%')
+//                  ->orWhere('body', 'LIKE', '%'.$query.'%')
+//                  ->get();
+//     return response()->json($posts);
+// });
+
 
 // Play Routes :
   Route::apiResource('/plays', PlayController::class);
