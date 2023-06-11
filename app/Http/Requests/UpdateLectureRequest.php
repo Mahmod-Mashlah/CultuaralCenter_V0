@@ -39,6 +39,8 @@ class UpdateLectureRequest extends FormRequest
                                         'after:start_time'],
             'target_people'      => ['string','max:255'],
             'teacher_experience' => ['string','max:255'],
+            'teacher_name' => ['required','string','exists:users,name','max:255'],
+
         /*  12:00 am,12:30 am,
             01:00 am,01:30 am,
             02:00 am,02:30 am,

@@ -20,11 +20,12 @@ return new class extends Migration
             $table->time('end_time');
             $table->string('target_people');
             $table->string('teacher_experience');
+            $table->string('teacher_name');
 
             // $table->string('priority')->default('medium');
 
-            // $table->unsignedBigInteger('user_id');
-            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
         });

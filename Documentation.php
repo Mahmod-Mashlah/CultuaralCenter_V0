@@ -296,7 +296,26 @@ git username & email
 git config --global user.name "Mahmod-Mashlah"
 git config --global user.email "mashlahmahmod@gmail.com"
 
+////////////////////////////////////////////////
+  Make Play all :
 
+  php artisan make:model Play -a
+
+  /////////////////////////////////////
+
+TO show all routes in project code the command :
+
+    php artisan route:list
+
+///////////////////////////////////////////////
+
+php artisan migrate
+
+/////////////////////////////////////////////
+
+php artisan make:resource PlaysResource
+
+////////////////////////////////////////////
  */
 
 

@@ -18,12 +18,14 @@ class Lecture extends Model
         'end_time',
         'target_people',
         'teacher_experience',
+        'teacher_name',
 
-        // 'user_id',
+        // relations :
+         'user_id',  // means teacher id
     ] ;
 
-    // public function user()
-    // {
-    //     return $this->belongsTo(User::class) ;
-    // }
+    public function user()
+    {
+        return $this->belongsTo(User::class) ;
+    }
 }

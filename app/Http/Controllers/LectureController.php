@@ -22,13 +22,13 @@ class LectureController extends Controller
 
         // return LecturesResource::collection(
         //     Lecture::where('user_id',Auth::user()->id)->get() ) ; // get lectures thats users are authenticated
-        return LecturesResource::collection(Lecture::all());
+        return $this->success(LecturesResource::collection(Lecture::all())) ;
     }
 
     public function nameSearch($name)
     {
         //
-        return Lecture::where("name","like","%".$name."%")->get();
+        return $this->success(Lecture::where("name","like","%".$name."%")->get());
     }
 
     public function search(Request $request)
@@ -61,6 +61,10 @@ class LectureController extends Controller
         $query->where('teacher_experience', 'like', '%' . $request->input('teacher_experience') . '%');
     }
 
+    if ($request->has('teacher_name')) {
+        $query->where('teacher_name', 'like', '%' . $request->input('teacher_name') . '%');
+    }
+
     $lecture = $query->get();
 
     // return view('lecture.index', compact('lecture'));
@@ -87,6 +91,7 @@ class LectureController extends Controller
             'end_time'           => $request-> end_time,
             'target_people'      => $request-> target_people,
             'teacher_experience' => $request-> teacher_experience,
+            'teacher_name'       => $request-> teacher_name,
         ]);
 
         return $this->success( new LecturesResource($lecture) , 'Lecture has added succussfully')  ;
@@ -95,7 +100,7 @@ class LectureController extends Controller
 
     public function show(Lecture $lecture)
     {
-        return new LecturesResource($lecture);
+        return $this->success( new LecturesResource($lecture));
     }
 
 
@@ -115,7 +120,7 @@ class LectureController extends Controller
         $lecture->update($request->all());
         $lecture->save();
 
-        return new LecturesResource($lecture);
+        return $this->success( new LecturesResource($lecture),'the Lecture has updated succeffuly');
     }
 
 
