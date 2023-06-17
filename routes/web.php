@@ -26,3 +26,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/web/welcome', function () {
+    return view('web.welcome');
+});
