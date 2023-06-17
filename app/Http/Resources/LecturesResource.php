@@ -23,11 +23,12 @@ class LecturesResource extends JsonResource
             'end_time' => $this->end_time,
             'target_people' => $this->target_people,
             'teacher_experience' => $this->teacher_experience,
+            'teacher_name' => $this->user->name,
             'created_at'=>$this->created_at,
             'updated_at'=>$this->updated_at,
 
             'relationships' => [
-                'id'=>(string)$this->user->id,
+                // 'id'=>(string)$this->user->id,
                 'teacher name'=>$this->user->name,
                 'teacher email'=>$this->user->email,
              ]
