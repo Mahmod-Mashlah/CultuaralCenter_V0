@@ -66,3 +66,5 @@
 {{-- <script src="dist/js/pages/dashboard.js"></script> --}}
 <script type="text/javascript" src="{{ URL::asset('assets/js/pages/dashboard.js') }}"></script>
 
+@yield('javascript')
+@yield('scripts')
