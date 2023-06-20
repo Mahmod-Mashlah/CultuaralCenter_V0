@@ -33,7 +33,9 @@
                 <div class="inner">
                   <h3>150</h3>
 
-                  <p>Events</p>
+                <p>
+                    Lectures & Plays
+                </p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-tasks" aria-hidden="true"></i>
