@@ -96,7 +96,7 @@
               <!-- ./col -->
               <div class="col-lg-6 col-6">
                   <!-- small card -->
-                  <div class="small-box bg-danger">
+                  <div class="small-box bg-orange">
                       <div class="inner">
                       <h3 class="text-dark">Plans Management</h3>
 
@@ -105,8 +105,8 @@
                       <div class="icon">
                       <i class="fas fa-th"></i>
                       </div>
-                      <a href="#" class="small-box-footer">
-                      Show Plans <i class="fas fa-arrow-circle-right"></i>
+                      <a href="#" class="small-box-footer ">
+                      <h6 class="text-white">Show Plans <i class="fas fa-arrow-circle-right"></i></h6>
                       </a>
                   </div>
                   </div>
@@ -115,7 +115,7 @@
                   <!-- ./col -->
                   <div class="col-lg-6 col-6">
                       <!-- small card -->
-                      <div class="small-box bg-danger">
+                      <div class="small-box bg-orange">
                       <div class="inner">
                           <h3 class="text-dark">Employees Management</h3>
 
@@ -125,7 +125,7 @@
                           <i class="fas fa fa-male"></i>
                       </div>
                       <a href="#" class="small-box-footer">
-                          Show Employees <i class="fas fa-arrow-circle-right"></i>
+                        <h6 class="text-white">Show Employees <i class="fas fa-arrow-circle-right"></i></h6>
                       </a>
                       </div>
                   </div>
