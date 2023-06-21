@@ -31,9 +31,9 @@
               <!-- small box -->
               <div class="small-box bg-primary">
                 <div class="inner">
-                  <h3>150</h3>
+                  <h3 class="text-dark" >150</h3>
 
-                <p>
+                <p class="text-dark">
                     Lectures & Plays
                 </p>
                 </div>
@@ -45,11 +45,11 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-success">
+              <div class="small-box bg-primary">
                 <div class="inner">
-                  <h3>53</h3>
+                  <h3 class="text-dark">53</h3>
 
-                  <p>Books</p>
+                  <p class="text-dark">Books</p>
                 </div>
                 <div class="icon">
                   {{-- <i class="ion ion-stats-bars"></i> --}}
@@ -61,11 +61,11 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-warning">
+              <div class="small-box bg-primary">
                 <div class="inner">
-                  <h3>44</h3>
+                  <h3 class="text-dark">44</h3>
 
-                  <p>Users</p>
+                  <p class="text-dark">Users</p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-user" aria-hidden="true"></i>
@@ -75,14 +75,14 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-danger">
+              <div class="small-box bg-primary">
                 <div class="inner">
-                  <h3>53<sup style="font-size: 20px">%</sup></h3>
+                  <h3 class="text-dark">97<sup style="font-size: 20px">%</sup></h3>
 
-                  <p>Rating</p>
+                  <p class="text-dark">Rating</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-pie-graph"></i>
+                  <i class="fa fa-star"></i>
                 </div>
               </div>
             </div>
@@ -90,72 +90,47 @@
           </div>
           <!-- /.row -->
 
-          {{-- PLans Start --}}
-                    <div class="col-md-3">
-            <div class="card card-success">
-              <div class="card-header">
-                <h3 class="card-title"> Employees</h3>
+          <div class="row">
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="card-refresh" data-source="widgets.html" data-source-selector="#card-refresh-content" data-load-on-init="false">
-                    <i class="fas fa-sync-alt"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                    <i class="fas fa-expand"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-                <!-- /.card-tools -->
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                The body of the card
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+
+              <!-- ./col -->
+              <div class="col-lg-6 col-6">
+                  <!-- small card -->
+                  <div class="small-box bg-danger">
+                      <div class="inner">
+                      <h3 class="text-dark">Plans Management</h3>
+
+                      <p class="text-dark">Plans Management</p>
+                      </div>
+                      <div class="icon">
+                      <i class="fas fa-th"></i>
+                      </div>
+                      <a href="#" class="small-box-footer">
+                      Show Plans <i class="fas fa-arrow-circle-right"></i>
+                      </a>
+                  </div>
+                  </div>
+                  <!-- ./col -->
+
+                  <!-- ./col -->
+                  <div class="col-lg-6 col-6">
+                      <!-- small card -->
+                      <div class="small-box bg-danger">
+                      <div class="inner">
+                          <h3 class="text-dark">Employees Management</h3>
+
+                          <p class="text-dark">Employees Management</p>
+                      </div>
+                      <div class="icon">
+                          <i class="fas fa fa-male"></i>
+                      </div>
+                      <a href="#" class="small-box-footer">
+                          Show Employees <i class="fas fa-arrow-circle-right"></i>
+                      </a>
+                      </div>
+                  </div>
+                  <!-- ./col -->
           </div>
-
-          {{-- PLans End --}}
-
-
-          {{-- Employee Start --}}
-                    <div class="col-md-3">
-            <div class="card card-success">
-              <div class="card-header">
-                <h3 class="card-title">Plans</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="card-refresh" data-source="widgets.html" data-source-selector="#card-refresh-content" data-load-on-init="false">
-                    <i class="fas fa-sync-alt"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="maximize">
-                    <i class="fas fa-expand"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-                <!-- /.card-tools -->
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                The body of the card
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-
-          {{-- Employee End --}}
 
         </div><!-- /.container-fluid -->
       </section>
