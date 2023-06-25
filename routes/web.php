@@ -30,3 +30,9 @@ Route::middleware([
 Route::get('/web/welcome', function () {
     return view('web.welcome');
 });
+
+// Plans :
+    // index :
+Route::get('/web/plans', function () {
+    return view('web.plans.index');
+});
