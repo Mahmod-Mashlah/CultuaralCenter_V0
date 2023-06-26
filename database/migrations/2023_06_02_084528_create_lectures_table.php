@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('lectures', function (Blueprint $table) {
-            $table->id();
+            $table->id();//->nullable()->change();
             $table->string('name');
             $table->string('type');
             $table->date('start_date')/*->dateformat('j-n-Y')*/;
@@ -20,6 +20,8 @@ return new class extends Migration
             $table->time('end_time');
             $table->string('target_people');
             $table->string('teacher_experience');
+
+
             $table->string('teacher_name');
 
             // $table->string('priority')->default('medium');
