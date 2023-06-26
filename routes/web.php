@@ -36,3 +36,7 @@ Route::get('/web/welcome', function () {
 Route::get('/web/plans', function () {
     return view('web.plans.index');
 });
+    // add Plan :
+Route::get('/web/plans/add', function () {
+    return view('web.plans.add');
+});

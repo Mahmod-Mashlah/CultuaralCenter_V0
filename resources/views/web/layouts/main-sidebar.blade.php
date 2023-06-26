@@ -40,7 +40,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                      <a href="./index.html" class="nav-link ">
+                      <a href="{{ url('./web/plans', []) }}" target="_blank" class="nav-link ">
                       <i class="far fa fa-indent nav-icon"></i>
                       <p>Show All Plans </p>
                       </a>
