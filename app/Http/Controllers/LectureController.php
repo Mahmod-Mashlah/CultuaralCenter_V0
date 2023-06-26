@@ -83,8 +83,9 @@ class LectureController extends Controller
 
 
             // 'user_id' => Auth::user()->id ,
+            // 'user_id'            => $request->user()->id,
 
-            'id'                 => $request-> id,
+            'user_id'            => auth()->user()->id,
             'name'               => $request-> name,
             'type'               => $request-> type,
             'start_date'         => $request-> start_date,
