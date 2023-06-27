@@ -256,6 +256,7 @@ class LoginUserRequest extends FormRequest
 
 ////////////////////////////////////////////////
 
+composer remove laravel/jetstream
 *
 
 
