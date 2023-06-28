@@ -11,15 +11,23 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// public Routes
+/////////////////////////// public Routes  /////////////////////////////////////
+///////////////////////////               //////////////////////////////////////
 
 Route::post('/register', [AuthController::class,'register']);
 Route::post('/login', [AuthController::class,'login']);
 
 
-// Lecture Routes :
+//  Lecture Routes (public) :
 
- Route::post('/lectures/search', [LectureController::class, 'search']);//
+Route::apiresource('/lectures', LectureController::class)->only(['index','show']);
+Route::post('/lectures/search', [LectureController::class, 'search']);//
+
+//  Lecture Routes (public) :
+
+Route::apiResource('/plays', PlayController::class)->only(['index','show']);
+ Route::post('/plays/search', [PlayController::class, 'search']);//
+
 
 // Route::post('/search', function(Request $request) {
 //     $query = $request->input('query');
@@ -29,28 +37,17 @@ Route::post('/login', [AuthController::class,'login']);
 //     return view('search-results', ['posts' => $posts]);
 // });
 
-// Route::post('/search', function(Request $request) {
-//     $query = $request->input('query');
-//     $posts = Post::where('title', 'LIKE', '%'.$query.'%')
-//                  ->orWhere('body', 'LIKE', '%'.$query.'%')
-//                  ->get();
-//     return response()->json($posts);
-// });
 
-
-// Play Routes :
-  Route::apiResource('/plays', PlayController::class);
-//  Route::get('/plays',[PlayController::class,'index']);
-
-
-
-// protected Routes (With Auth)
+///////////////////// protected Routes (With Auth) //////////////////////////////////////////
+/////////////////////                              //////////////////////////////////////////
 
 // Route::prefix()-> group(['middleware'=>['auth:sanctum']],function () {} //to implement prefix
 
 Route::group(['middleware'=>['auth:sanctum']],function () {
 
-Route::resource('/lectures', LectureController::class);
+Route::resource('/lectures', LectureController::class)->except(['index','show']);
+Route::apiResource('/plays', PlayController::class)->except(['index','show']);
+
 Route::post('/logout', [AuthController::class,'logout']);
 
 });

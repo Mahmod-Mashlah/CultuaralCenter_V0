@@ -2,38 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Play;
+use App\Http\Requests\StorePlayRequest;
+use App\Http\Requests\UpdatePlayRequest;
 use Carbon\Carbon;
-use App\Models\Lecture;
 use App\Traits\HttpResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Resources\LecturesResource;
-use App\Http\Requests\StoreLectureRequest;
-use App\Http\Requests\UpdateLectureRequest;
+use App\Http\Resources\PlaysResource;
 use Illuminate\Validation\Rule;
-class LectureController extends Controller
+
+class PlayController extends Controller
 {
     use HttpResponse ;
 
     public function index()
     {
-        #  return LecturesResource::collection(
-        #   Lecture::where('user_id',Auth::user()->id)->get() ) ; // get lectures thats users are authenticated
+        #  return PlaysResource::collection(
+        #   Play::where('user_id',Auth::user()->id)->get() ) ; // get plays thats users are authenticated
 
-        // return LecturesResource::collection(
-        //     Lecture::where('user_id',Auth::user()->id)->get() ) ; // get lectures thats users are authenticated
-        return $this->success(LecturesResource::collection(Lecture::all())) ;
+        // return PlaysResource::collection(
+        //     Play::where('user_id',Auth::user()->id)->get() ) ; // get plays thats users are authenticated
+        return $this->success(PlaysResource::collection(Play::all())) ;
     }
 
     // public function nameSearch($name)
     // {
     //     //
-    //     return $this->success(Lecture::where("name","like","%".$name."%")->get());
+    //     return $this->success(Play::where("name","like","%".$name."%")->get());
     // }
 
     public function search(Request $request)
 {
-    $query = Lecture::query();
+    $query = Play::query();
 
     if ($request->has('name')) {
         $query->where('name', 'like', '%' . $request->input('name') . '%');
@@ -66,19 +67,19 @@ class LectureController extends Controller
         $query->where('teacher_name', 'like', '%' . $request->input('teacher_name') . '%');
     }
 
-    $lecture = $query->get();
+    $play = $query->get();
     // not working
-    // if (!$lecture) {
+    // if (!$play) {
     //     return $this->error('','No results found !',404);
     // }
 
-    // return view('lecture.index', compact('lecture'));
-    return $this->success($lecture);
+    // return view('play.index', compact('play'));
+    return $this->success($play);
 
 }
 
-/* Validation for realtime booking lectures DONT FORGET TO MAKE
-    CODE A GAIN FOR PLAYS
+/* Validation for realtime booking Plays DONT FORGET TO MAKE
+    CODE A GAIN FOR Lectures
 public function rules()
 {
     return [
@@ -99,12 +100,12 @@ public function messages()
     ];
 }
 */
-    public function store(StoreLectureRequest $request)
+    public function store(StorePlayRequest $request)
      {
         $request -> validated($request->all() );
         // $request->start_date=Carbon::createFromFormat('j-n-Y', $request->start_date)->format('j-n-Y');
         //  dd($request->start_date);
-        $lecture = Lecture::create([
+        $play = Play::create([
 
 
             // 'user_id' => Auth::user()->id ,
@@ -121,52 +122,52 @@ public function messages()
             'teacher_name'       => $request-> teacher_name,
         ]);
 
-        return $this->success( new LecturesResource($lecture) , 'Lecture has added succussfully')  ;
+        return $this->success( new PlaysResource($play) , 'Play has added succussfully')  ;
     }
 
 
-    public function show(Lecture $lecture)
+    public function show(Play $play)
     {
-        return $this->success( new LecturesResource($lecture));
+        return $this->success( new PlaysResource($play));
     }
 
 
-    public function update(UpdateLectureRequest $request, Lecture $lecture)
+    public function update(UpdatePlayRequest $request, Play $play)
     {
         // this work correctly
         // in postman make the method : Post (not patch not put)
         // and make in request body : _method = PUT
 
-        $lecture=Lecture::find($lecture->id);
-        // if (Auth::user()->id !== $lecture->user_id) {
+        $play=Play::find($play->id);
+        // if (Auth::user()->id !== $play->user_id) {
         //     return $this->error('','You are not Authorized to make this request',403);
         //     // you should use the trait   (use HttpResponses ;) above
 
         // }
 
-        $lecture->update($request->all());
-        $lecture->save();
+        $play->update($request->all());
+        $play->save();
 
-        return $this->success( new LecturesResource($lecture),'the Lecture has updated succeffuly');
+        return $this->success( new PlaysResource($play),'the Play has updated succeffuly');
     }
 
 
-    public function destroy(Lecture $lecture)
+    public function destroy(Play $play)
     {
         // way 1 :
-            $lecture->delete();
-            // return $this->success('Lecture was Deleted Successfuly ','lecture was deleted successfully',204);
-            return $this->success('Lecture was Deleted Successfuly ','lecture was deleted successfully',200);
+            $play->delete();
+            // return $this->success('Play was Deleted Successfuly ','play was deleted successfully',204);
+            return $this->success('Play was Deleted Successfuly ','play was deleted successfully',200);
 
         // way 2 : (it is best to do it in Show & Update functions [Implement Private function below] )
 
-        // return $this->isNotAuthorized($lecture) ? $this->isNotAuthorized($lecture) : $lecture->delete();
+        // return $this->isNotAuthorized($play) ? $this->isNotAuthorized($play) : $play->delete();
         // return true (1) if the delete successfuly occoured
     }
 
-    private function isNotAuthorized($lecture)
+    private function isNotAuthorized($play)
     {
-        if (Auth::user()->id !== $lecture->user_id) {
+        if (Auth::user()->id !== $play->user_id) {
             return $this->error('','You are not Authorized to make this request',403);
             }
         }
