@@ -255,11 +255,67 @@ class LoginUserRequest extends FormRequest
 
 
 ////////////////////////////////////////////////
+  Make Lecture all :
 
-*
+  php artisan make:model Lecture -a
 
+  /////////////////////////////////////
 
+TO show all routes in project code the command :
 
+    php artisan route:list
+
+///////////////////////////////////////////////
+
+php artisan migrate
+
+/////////////////////////////////////////////
+
+php artisan make:resource LecturesResource
+
+////////////////////////////////////////////
+
+php artisan cache:clear
+
+php artisan optimize:clear
+
+php artisan optimize
+
+php artisan route:clear
+///////////////////////////////////////////
+Time and Date Validation Request :
+composer require vdhicts/laravel-validation-rules
+
+- in validation Request :
+'date_field' => [new DateHasSpecificMinutes([15, 45])]
+
+////////////////////////////////////////////
+
+git username & email
+
+git config --global user.name "Mahmod-Mashlah"
+git config --global user.email "mashlahmahmod@gmail.com"
+
+////////////////////////////////////////////////
+  Make Play all :
+
+  php artisan make:model Play -a
+
+  /////////////////////////////////////
+
+TO show all routes in project code the command :
+
+    php artisan route:list
+
+///////////////////////////////////////////////
+
+php artisan migrate
+
+/////////////////////////////////////////////
+
+php artisan make:resource PlaysResource
+
+////////////////////////////////////////////
  */
 
 
