@@ -25,11 +25,11 @@ class LectureController extends Controller
         return $this->success(LecturesResource::collection(Lecture::all())) ;
     }
 
-    public function nameSearch($name)
-    {
-        //
-        return $this->success(Lecture::where("name","like","%".$name."%")->get());
-    }
+    // public function nameSearch($name)
+    // {
+    //     //
+    //     return $this->success(Lecture::where("name","like","%".$name."%")->get());
+    // }
 
     public function search(Request $request)
 {
@@ -38,6 +38,7 @@ class LectureController extends Controller
     if ($request->has('name')) {
         $query->where('name', 'like', '%' . $request->input('name') . '%');
     }
+
 
     if ($request->has('type')) {
         $query->where('type', 'like', '%' . $request->input('type') . '%');
@@ -66,11 +67,13 @@ class LectureController extends Controller
     }
 
     $lecture = $query->get();
+    // not working
+    // if (!$lecture) {
+    //     return $this->error('','No results found !',404);
+    // }
 
     // return view('lecture.index', compact('lecture'));
     return $this->success($lecture);
-
-
 
 }
 

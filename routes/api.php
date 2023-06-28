@@ -19,9 +19,6 @@ Route::post('/login', [AuthController::class,'login']);
 
 // Lecture Routes :
 
-  Route::apiResource('/lectures', LectureController::class);
-//  Route::post('/lectures/store',[LectureController::class,'store']);
-
  Route::post('/lectures/search', [LectureController::class, 'search']);//
 
 // Route::post('/search', function(Request $request) {
@@ -53,7 +50,7 @@ Route::post('/login', [AuthController::class,'login']);
 
 Route::group(['middleware'=>['auth:sanctum']],function () {
 
-// Route::resource('/lectures', LectureController::class);
+Route::resource('/lectures', LectureController::class);
 Route::post('/logout', [AuthController::class,'logout']);
 
 });
