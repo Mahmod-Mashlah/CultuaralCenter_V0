@@ -17,21 +17,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+// Public Routes :
+
+Route::get('/', function () {
+    return view('auth.login');
+});
+
+// Private Routes :
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-});
 
-Route::get('/web/welcome', function () {
-    return view('web.welcome');
-});
-
-// Plans :
+    // Plans :
     // index :
 Route::get('/web/plans', function () {
     return view('web.plans.index');
@@ -40,3 +46,12 @@ Route::get('/web/plans', function () {
 Route::get('/web/plans/add', function () {
     return view('web.plans.add');
 });
+
+Route::get('/web/welcome', function () {
+    return view('web.welcome');
+});
+
+});
+
+
+

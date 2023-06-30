@@ -1,9 +1,11 @@
+<link rel="stylesheet" href="{{ asset('assets/css/adminlte.css') }}">
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+            {{-- <x-authentication-card-logo /> --}}
+            <img src="{{ asset('assets/img/culture-center-logo.jpg') }}" alt="AdminLTE Logo" class="img-thumbnail brand-image img-circle elevation-3 " style="opacity: .8" width='150px' height= '100px' border-radius= '0.50rem'>
 
+        </x-slot>
         <x-validation-errors class="mb-4" />
 
         @if (session('status'))
