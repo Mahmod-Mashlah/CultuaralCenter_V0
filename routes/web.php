@@ -33,9 +33,9 @@ Route::middleware([
     'verified'
 ])->group(function () {
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/web/welcome', function () {
+        return view('web.welcome');
+    })->name('welcome');
 
     // Plans :
     // index :
@@ -47,9 +47,9 @@ Route::get('/web/plans/add', function () {
     return view('web.plans.add');
 });
 
-Route::get('/web/welcome', function () {
-    return view('web.welcome');
-});
+// Route::get('/web/welcome', function () {
+//     return view('web.welcome');
+// });
 
 });
 

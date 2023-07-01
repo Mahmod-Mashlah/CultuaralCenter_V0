@@ -12,7 +12,9 @@
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
     {{-- <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60"> --}}
-    <img class="animation__shake" src="{{ asset('assets/img/culture-center-logo.jpg') }}" alt="AdminLTELogo" height="200" width="200">
+    <img class="animation__shake img-thumbnail brand-image img-circle "
+    src="{{ asset('assets/img/culture-center-logo.jpg') }}" alt="AdminLTELogo" width='150px' height= '100px' style="opacity: .8"  border-radius= '0.50rem'>
+
 
 </div>
 

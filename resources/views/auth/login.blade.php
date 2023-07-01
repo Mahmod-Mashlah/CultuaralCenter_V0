@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('login') }}">
+        <form method="GET" action="{{ url('./web/welcome', []) }}">
             @csrf
 
             <div>
