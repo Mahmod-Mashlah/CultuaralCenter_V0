@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('web.login-template.sign');
-});
-
 
 
 // Public Routes :
+
+Route::get('/login', function () {
+    return view('web.login-template.sign');
+});
 
 
 
@@ -27,13 +27,13 @@ Route::get('/', function () {
 
 Route::middleware([
     'auth:sanctum',
-    config('jetstream.auth_session'),
+    ,
     'verified'
 ])->group(function () {
 
-    Route::get('/web/welcome', function () {
+    Route::get('/', function () {
         return view('web.welcome');
-    })->name('welcome');
+    })->name('dashboard');
 
     // Plans :
     // index :
@@ -45,9 +45,6 @@ Route::get('/web/plans/add', function () {
     return view('web.plans.add');
 });
 
-// Route::get('/web/welcome', function () {
-//     return view('web.welcome');
-// });
 
 });
 
