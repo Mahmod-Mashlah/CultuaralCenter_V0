@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WebLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,19 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 // Public Routes :
 
-Route::get('/login', function () {
-    return view('web.login-template.sign');
-});
+    // Display login form
+Route::get('/login', [WebLoginController::class, 'showLoginForm'])->name('login');
+
+    // Handle login form submission
+Route::post('/login', [WebLoginController::class, 'processLogin']);
+
 
 
 
 // Private Routes :
-
-Route::middleware([
-    'auth:sanctum',
-    ,
-    'verified'
-])->group(function () {
 
     Route::get('/', function () {
         return view('web.welcome');
@@ -45,8 +43,6 @@ Route::get('/web/plans/add', function () {
     return view('web.plans.add');
 });
 
-
-});
 
 
 

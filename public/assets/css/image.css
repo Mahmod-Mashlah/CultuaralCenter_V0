@@ -1,0 +1,12 @@
+.bg-image {
+    background-image: url('../img/cc_background.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 600px;
+    height: 750px;
+
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+
+  }
