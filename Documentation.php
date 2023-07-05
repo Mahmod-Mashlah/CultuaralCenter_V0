@@ -43,7 +43,7 @@ php artisan serve
 * Traits Folder (App\Traits)
 * HttpResponse.php  (App\Traits\HttpResponses)
 
-make in app folder the (Traits) Folder and make a file (HttpResponses.php) code that in it :
+make in app folder the (Traits) Folder and make a file (HttpResponse.php) code that in it :
 
 <?php
 
