@@ -12,7 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('books', function (Blueprint $table) {
+
             $table->id();
+            $table->string('name');
+            $table->string('author');
+            $table->integer('amount')->default(1);
+            $table->string('type');
+            $table->string('row'); // الرف
+
+
+            // $table->unsignedBigInteger('department_id');
+            // $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

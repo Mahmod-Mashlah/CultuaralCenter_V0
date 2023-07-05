@@ -11,9 +11,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // public Routes
-
+  // Auth
 Route::post('/register', [AuthController::class,'register']);
 Route::post('/login', [AuthController::class,'login']);
+  //  Book Routes (public) :
+
+Route::apiresource('/books', BookController::class)->only(['index','show']);
+Route::post('/books/search', [BookController::class, 'search']);
 
 // protected Routes (With Auth)
 
@@ -21,9 +25,13 @@ Route::post('/login', [AuthController::class,'login']);
 
 Route::group(['middleware'=>['auth:sanctum']],function () {
 
-Route::resource('/books', BookController::class);
-Route::post('/logout', [AuthController::class,'logout']);
+
+    Route::resource('/books', BookController::class)->except(['index','show']);
+    Route::post('/logout', [AuthController::class,'logout']);
 
 });
+
+
+
 
 
