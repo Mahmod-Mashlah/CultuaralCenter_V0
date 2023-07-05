@@ -19,29 +19,33 @@ use App\Http\Controllers\WebLoginController;
 // Public Routes :
 
     // Display login form
-Route::get('/login', [WebLoginController::class, 'showLoginForm'])->name('login');
+Route::get('/login', [WebLoginController::class, 'showLoginForm']);
 
     // Handle login form submission
-Route::post('/login', [WebLoginController::class, 'processLogin']);
+Route::post('/login', [WebLoginController::class, 'processLogin'])->name('login');
 
 
 
 
 // Private Routes :
 
+Route::middleware('auth')->group(function () {
+    // Protected routes here
     Route::get('/', function () {
         return view('web.welcome');
     })->name('dashboard');
-
     // Plans :
     // index :
-Route::get('/web/plans', function () {
+    Route::get('/web/plans', function () {
     return view('web.plans.index');
-});
+    });
     // add Plan :
-Route::get('/web/plans/add', function () {
+    Route::get('/web/plans/add', function () {
     return view('web.plans.add');
+    });
 });
+
+
 
 
 
