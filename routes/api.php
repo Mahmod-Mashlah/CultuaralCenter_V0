@@ -21,18 +21,9 @@ Route::post('/login', [AuthController::class,'login']);
 
 Route::group(['middleware'=>['auth:sanctum']],function () {
 
-// Route::resource('/tasks', TaskController::class);
+Route::resource('/books', BookController::class);
 Route::post('/logout', [AuthController::class,'logout']);
 
 });
 
-// protected Routes (With Auth)
 
-// Route::prefix()-> group(['middleware'=>['auth:sanctum']],function () {} //to implement prefix
-
-Route::group(['middleware'=>['auth:sanctum']],function () {
-
-    Route::resource('/books', BookController::class);
-
-
-    });
