@@ -96,7 +96,7 @@
               <!-- ./col -->
               <div class="col-lg-6 col-6">
                   <!-- small card -->
-                  <div class="small-box bg-orange">
+                  <div class="small-box bg-yellow">
                       <div class="inner">
                       <h3 class="text-dark">Plans Management</h3>
 
@@ -115,7 +115,7 @@
                   <!-- ./col -->
                   <div class="col-lg-6 col-6">
                       <!-- small card -->
-                      <div class="small-box bg-orange">
+                      <div class="small-box bg-yellow">
                       <div class="inner">
                           <h3 class="text-dark">Employees Management</h3>
 
