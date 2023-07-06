@@ -15,10 +15,10 @@ class Department extends Model
         'max_row_books',
     ] ;
 
-    // // Relations :
-    // public function user()
-    // {
-    //     return $this->belongsTo(User::class) ;
-    // }
+    // Relations :
+    public function book()
+    {
+        return $this->hasMany(Book::class) ;
+    }
 
 }

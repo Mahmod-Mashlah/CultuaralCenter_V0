@@ -7,6 +7,7 @@ use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
 use App\Traits\HttpResponse;
 use App\Http\Resources\BooksResource;
+use App\Models\Department;
 use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
@@ -42,7 +43,7 @@ class BookController extends Controller
 
             //relations :
 
-                // 'department_name' => $request->department_name,
+                'department_id' => Department::department()->id,
         ]);
 
         return new BooksResource($book) ;
