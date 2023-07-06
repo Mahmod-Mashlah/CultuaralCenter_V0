@@ -29,7 +29,7 @@ Route::post('/login', [WebLoginController::class, 'processLogin'])->name('login'
 
 // Private Routes :
 
-Route::middleware('auth')->group(function () {
+Route::middleware('web-auth')->group(function () {
     // Protected routes here
     Route::get('/', function () {
         return view('web.welcome');

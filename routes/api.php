@@ -27,14 +27,14 @@ Route::post('/departments/search', [DepartmentController::class, 'search']);
 
 // Route::prefix()-> group(['middleware'=>['auth:sanctum']],function () {} //to implement prefix
 
-// Route::group(['middleware'=>['auth:sanctum']],function () {
+Route::group(['middleware'=>['auth:sanctum']],function () {
 
 
     Route::resource('/books', BookController::class)->except(['index','show']);
     Route::resource('/departments', DepartmentController::class)->except(['index','show']);
     Route::post('/logout', [AuthController::class,'logout']);
 
-// });
+ });
 
 
 

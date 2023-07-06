@@ -73,11 +73,11 @@ class DepartmentController extends Controller
     public function update(UpdateDepartmentRequest $request, Department $department)
     {
         $department=Department::find($department->id);
-        if (Auth::user()->id !== $department->user_id) {
-            return $this->error('','You are not Authorized to make this request',403);
-            // you should use the trait   (use HttpResponses ;) above
+        // if (Auth::user()->id !== $department->user_id) {
+        //     return $this->error('','You are not Authorized to make this request',403);
+        //     // you should use the trait   (use HttpResponses ;) above
 
-        }
+        // }
 
         $department->update($request->all());
         $department->save();
@@ -89,12 +89,12 @@ class DepartmentController extends Controller
     public function destroy(Department $department)
     {
           // way 1 :
-            // $department->delete();
-            // return $this->success('Department was Deleted Successfuly ',null,204);
+            $department->delete();
+            return $this->success('Department was Deleted Successfuly ',null,200);
 
         // way 2 : (it is best to do it in Show & Update functions [Implement Private function below] )
 
-        return $this->isNotAuthorized($department) ? $this->isNotAuthorized($department) : $department->delete();
+        // return $this->isNotAuthorized($department) ? $this->isNotAuthorized($department) : $department->delete();
         // return true (1) if the delete successfuly occoured
 
     }
