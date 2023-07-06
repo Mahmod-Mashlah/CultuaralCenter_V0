@@ -31,9 +31,9 @@
               <!-- small box -->
               <div class="small-box bg-primary">
                 <div class="inner">
-                  <h3 class="text-dark" >150</h3>
+                  <h3 class="text-white" >150</h3>
 
-                <p class="text-dark">
+                <p class="text-white">
                     Lectures & Plays
                 </p>
                 </div>
@@ -47,9 +47,9 @@
               <!-- small box -->
               <div class="small-box bg-primary">
                 <div class="inner">
-                  <h3 class="text-dark">53</h3>
+                  <h3 class="text-white">53</h3>
 
-                  <p class="text-dark">Books</p>
+                  <p class="text-white">Books</p>
                 </div>
                 <div class="icon">
                   {{-- <i class="ion ion-stats-bars"></i> --}}
@@ -63,9 +63,9 @@
               <!-- small box -->
               <div class="small-box bg-primary">
                 <div class="inner">
-                  <h3 class="text-dark">44</h3>
+                  <h3 class="text-white">44</h3>
 
-                  <p class="text-dark">Users</p>
+                  <p class="text-white">Users</p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-user" aria-hidden="true"></i>
@@ -77,9 +77,9 @@
               <!-- small box -->
               <div class="small-box bg-primary">
                 <div class="inner">
-                  <h3 class="text-dark">97<sup style="font-size: 20px">%</sup></h3>
+                  <h3 class="text-white">97<sup style="font-size: 20px">%</sup></h3>
 
-                  <p class="text-dark">Rating</p>
+                  <p class="text-white">Rating</p>
                 </div>
                 <div class="icon">
                   <i class="fa fa-star"></i>
@@ -98,9 +98,9 @@
                   <!-- small card -->
                   <div class="small-box bg-yellow">
                       <div class="inner">
-                      <h3 class="text-dark">Plans Management</h3>
+                      <h3 class="text-white">Plans Management</h3>
 
-                      <p class="text-dark">Plans Management</p>
+                      <p class="text-white">Plans Management</p>
                       </div>
                       <div class="icon">
                       <i class="fas fa-th"></i>
@@ -117,9 +117,9 @@
                       <!-- small card -->
                       <div class="small-box bg-yellow">
                       <div class="inner">
-                          <h3 class="text-dark">Employees Management</h3>
+                          <h3 class="text-white">Employees Management</h3>
 
-                          <p class="text-dark">Employees Management</p>
+                          <p class="text-white">Employees Management</p>
                       </div>
                       <div class="icon">
                           <i class="fas fa fa-male"></i>
