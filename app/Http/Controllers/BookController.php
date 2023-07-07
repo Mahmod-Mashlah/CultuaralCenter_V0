@@ -33,6 +33,9 @@ class BookController extends Controller
 
         $request -> validated($request->all() );
 
+        $department = Department::find('department_id');
+
+
         $book = Book::create([
 
             'name' => $request->name,
@@ -40,10 +43,11 @@ class BookController extends Controller
             'amount' => $request->amount,
             'type' => $request->type,
             'row' => $request->row,
+            'department_id' => $department->id,
 
             //relations :
 
-                'department_id' => Department::department()->id,
+                // 'department_name' => $request->department_name,
         ]);
 
         return new BooksResource($book) ;

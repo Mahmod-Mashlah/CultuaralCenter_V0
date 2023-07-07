@@ -23,7 +23,7 @@ class StoreDepartmentRequest extends FormRequest
     {
         return [
 
-            'name' => ['required','string','max:255',],
+            'name' => ['required','unique:departments,name','string','max:255',],
             'rows_count' => ['required','integer','max:100','min:3'],
             'max_row_books' => ['required','integer','max:300','min:3'],
 

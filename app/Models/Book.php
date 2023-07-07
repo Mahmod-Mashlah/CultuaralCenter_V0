@@ -18,11 +18,11 @@ class Book extends Model
 
         // relations :
 
-        'department_id',
+        // 'department_id',
         'type', // it means  : From any department .
     ] ;
 
-    public function department()
+    public function departments()
     {
         return $this->belongsTo(Department::class) ;
     }

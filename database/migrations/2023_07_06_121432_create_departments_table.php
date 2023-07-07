@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
-            $table->string('name');//->default('medium');
+            $table->string('name');
             $table->integer('rows_count')->default(3);
             $table->integer('max_row_books')->default(1);
 
