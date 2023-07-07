@@ -2,7 +2,7 @@
 @extends('web.layouts.master')
 
 @section('title')
-    Plans || Add New Employee
+    Employees || Edit Permissions
 @endsection {{-- or @stop --}}
 
 @section('css')
@@ -30,7 +30,7 @@
 @endsection
 
 @section('son2')
-    Add New Employee
+    Edit Permissions
 @endsection
 
 
@@ -48,7 +48,7 @@
               <!-- general form elements -->
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Add a New Employee</h3>
+                  <h3 class="card-title">Edit Permissions</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->

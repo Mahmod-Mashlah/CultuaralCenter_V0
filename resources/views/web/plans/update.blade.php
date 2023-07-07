@@ -2,7 +2,7 @@
 @extends('web.layouts.master')
 
 @section('title')
-    Plans || Add New Employee
+    Plans || Update Plan
 @endsection {{-- or @stop --}}
 
 @section('css')
@@ -26,11 +26,11 @@
 @endsection
 
 @section('son1')
-    Employees
+    Plans
 @endsection
 
 @section('son2')
-    Add New Employee
+    Update Plan
 @endsection
 
 
@@ -48,11 +48,11 @@
               <!-- general form elements -->
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Add a New Employee</h3>
+                  <h3 class="card-title">Update Plan</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ url('web/employees', []) }}" method="POST">
+                <form action="{{ url('web/plans', []) }}" method="POST">
                     @csrf
                   <div class="card-body">
 

@@ -33,7 +33,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ url('./web/welcome', []) }}">@yield('root')</a></li>
+              <li class="breadcrumb-item"><a href="{{ url('./', []) }}">@yield('root')</a></li>
               <li class="breadcrumb-item active">@yield('son1')</li>
               <li class="breadcrumb-item active">@yield('son2')</li>
             </ol>

@@ -124,7 +124,7 @@ Dashboard
                       <div class="icon">
                           <i class="fas fa fa-male"></i>
                       </div>
-                      <a href="#" class="small-box-footer">
+                      <a href="{{ url('./web/employees', []) }}" class="small-box-footer">
                         <h6 class="text-white">Show Employees <i class="fas fa-arrow-circle-right"></i></h6>
                       </a>
                       </div>

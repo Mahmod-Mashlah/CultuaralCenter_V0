@@ -1,7 +1,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ url('./web/welcome', []) }}" class="brand-link">
+    <a href="{{ url('./', []) }}" class="brand-link">
       {{-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
       <img src="{{ asset('assets/img/culture-center-logo.jpg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Cultural Center App</span>
@@ -46,13 +46,13 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index.html" class="nav-link ">
+                    <a href="{{ url('/web/plans/add', []) }}" class="nav-link ">
                       <i class="far fa fa-plus-square nav-icon"></i>
                       <p>Add a Plan</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index2.html" class="nav-link">
+                    <a href="{{ url('/web/plans/update', []) }}" class="nav-link">
                       <i class="far fa fa-edit nav-icon" aria-hidden="true"></i>
                       <p>Update a Plan</p>
                     </a>
@@ -71,21 +71,21 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link ">
+                        <a href="{{ url('./web/employees', []) }}" class="nav-link ">
                         <i class="far fa fa-indent nav-icon"></i>
                         <p>Show All Employees </p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link ">
+                        <a href="{{ url('/web/employees/add', []) }}" class="nav-link ">
                           <i class="far fa fa-plus-square nav-icon"></i>
                           <p>Add an Employee</p>
                         </a>
                       </li>
 
                   <li class="nav-item">
-                    <a href="./index3.html" class="nav-link">
+                    <a href="{{ url('/web/employees/edit-permissions', []) }}" class="nav-link">
                       <i class="far fa fa-wrench nav-icon"></i>
                      <p> Edit Permissions </p>
                     </a>

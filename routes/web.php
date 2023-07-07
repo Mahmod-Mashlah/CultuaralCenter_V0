@@ -42,7 +42,11 @@ Route::middleware('web-auth')->group(function () {
     // add Plan :
     Route::get('/web/plans/add', function () {
     return view('web.plans.add');
-    });
+    })->name('plans-add');
+    // update Plan :
+    Route::get('/web/plans/update', function () {
+    return view('web.plans.update');
+    })->name('plans-update');
 
     // Employees :
     // index :
@@ -52,8 +56,13 @@ Route::middleware('web-auth')->group(function () {
     // add Employee :
     Route::get('/web/employees/add', function () {
     return view('web.employees.add');
-    });
+    })->name('employees-add');
 });
+    // edit Permissions :
+    Route::get('/web/employees/edit-permissions', function () {
+    return view('web.employees.edit-permissions');
+    })->name('employees-edit-permissions');
+
 
 
 
