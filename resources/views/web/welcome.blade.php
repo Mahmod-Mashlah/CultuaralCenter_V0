@@ -9,16 +9,16 @@
 @endsection
 
 @section('root')
-    Dashboard
+Dashboard
 @endsection
 
 @section('son1')
-    Plans
+
 @endsection
 
-{{-- @section('son2')
-
-@endsection --}}
+@section('son2')
+Dashboard
+@endsection
 
 @section('content')
 

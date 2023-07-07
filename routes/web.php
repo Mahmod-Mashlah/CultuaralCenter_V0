@@ -38,10 +38,20 @@ Route::middleware('web-auth')->group(function () {
     // index :
     Route::get('/web/plans', function () {
     return view('web.plans.index');
-    });
+    })->name('plans');
     // add Plan :
     Route::get('/web/plans/add', function () {
     return view('web.plans.add');
+    });
+
+    // Employees :
+    // index :
+    Route::get('/web/employees', function () {
+    return view('web.employees.index');
+    })->name('employees');
+    // add Employee :
+    Route::get('/web/employees/add', function () {
+    return view('web.employees.add');
     });
 });
 
