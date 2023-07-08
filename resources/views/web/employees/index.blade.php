@@ -45,8 +45,8 @@
 
 
               <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">DataTable with default features</h3>
+                <div class="card-header bg-blue">
+                  <h3 class="card-title text-white">These are all Employees in this Center</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
