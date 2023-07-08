@@ -59,7 +59,7 @@
                                         </label>
                                         <sub>( {{ 3 }}-{{ 100 }} ) </sub>
                                         <select class="selectpicker col-md-12" placeholder="2 to 60">
-                                            @for ($i = 2; $i <= 60; $i++)
+                                            @for ($i = 2; $i <= 100; $i++)
                                                 <option>{{ $i }}</option>
                                             @endfor
                                         </select>
