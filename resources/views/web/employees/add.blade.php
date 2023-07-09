@@ -56,102 +56,43 @@
                     @csrf
                   <div class="card-body">
 
-                    <div class="form-group">
-
-                      <label for="startDate">Start Date</label>
-                      <input id="startDate" class="form-control" type="date" />
-                    </div>
 
 
-                    <div class="form-group cs-form">
-                        <label for="exampleInputEmail1"> The Center opens at </label>
-                        <input type="time" class="form-control"  />
-                    </div>
-
-
-
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">The Center close at</label>
-                        <input type="time" class="form-control"  />
-                    </div>
-                    {{-- Activities --}}
-                    <h4 type="text" class=" btn-warning col d-flex justify-content-center" data-toggle="modal" data-target="#modal-primary">
-                        Activities
-                      </h4>
                     <div class="row d-flex">
-                        <div class="col"><hr color="blue"></div>
-                        <div class="col"><hr color="blue"></div>
+
 
                       </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Minimum Activities Count</label>
+                      <label for="exampleInputPassword1">Name</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                     </div>
 
                     <div class="form-group">
-                      <label for="exampleInputFile">Minimum Activities Available types</label>
+                      <label for="exampleInputFile">E-mail :</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Count For each Activity type</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                    </div>
-                   {{-- Lectures --}}
-                   <h4 type="text" class=" btn-warning col d-flex justify-content-center" data-toggle="modal" data-target="#modal-primary">
-                    Lectures
-                  </h4>
-                   <div class="row d-flex">
-                    <div class="col"><hr color="blue"></div>
-                    <div class="col"><hr color="blue"></div>
 
-                  </div>
-
-                    <div class="form-group">
-                        <label for="exampleSelectBorder">Minimum Lectures Count  :
-                        </label>
-                        <sub>( 2-60 ) </sub>
-                        <select class="selectpicker col-md-12" placeholder="2 to 60">
-                            @for ($i = 2; $i <= 60; $i++)
-                            <option>{{ $i }}</option>
-                            @endfor
-                          </select>
-                      </div>
-                    <div class="form-group">
-                      <label for="exampleInputFile">Minimum Lectures Available types</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <div class="row d-flex">
+                    <div class="col"><hr color="orange"></div>
+                    <div class="col"><hr color="orange"></div>
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Count For each Lecture type</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                    </div>
-                   {{-- Plays --}}
-                   <h4 type="text" class=" btn-warning col d-flex justify-content-center" data-toggle="modal" data-target="#modal-primary">
-                    Plays
-                  </h4>
-                   <div class="row d-flex">
-                    <div class="col"><hr color="blue"></div>
-                    <div class="col"><hr color="blue"></div>
+                    {{--  --}}
 
-                  </div>
+                   <div class="form-group">
+                       <label for="exampleSelectBorder">Type  :
+                       </label>
 
-                    <div class="form-group">
-                        <label for="exampleSelectBorder">Minimum Plays Count :</label>
-                        <sub>( 1-30 ) </sub>
-                        <select class="selectpicker col-md-12" placeholder="2 to 60">
-                            @for ($i = 1; $i <= 30; $i++)
-                            <option>{{ $i }}</option>
-                            @endfor
-                          </select>
-                      </div>
+                       <select class="selectpicker col-md-12" placeholder="">
 
-                    <div class="form-group">
-                      <label for="exampleInputFile">Minimum Plays Available types</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Count For each Play type</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                    </div>
+                            <option>Theatre </option>
+                            <option>Library </option>
+                            <option>Activity </option>
+
+                         </select>
+                     </div>
+
+
+
 
                   </div>
                   <!-- /.card-body -->
