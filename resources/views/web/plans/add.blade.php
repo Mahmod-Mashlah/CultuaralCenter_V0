@@ -55,121 +55,145 @@
 
                                     <div class="form-group">
 
-                                        <label for="startDate">Start Date</label>
-                                        <input id="startDate" class="form-control" type="date" />
+                                        <label for="startDate">Start Date :</label>
+                                        <input id="startDate" class="form-control bg- light" type="date" />
                                     </div>
 
 
                                     <div class="form-group cs-form">
-                                        <label for="exampleInputEmail1"> The Center opens at </label>
-                                        <input type="time" class="form-control" />
+                                        <label for="exampleInputEmail1"> The Center opens at :</label>
+                                        <input type="time" class="form-control bg- light" />
                                     </div>
 
 
 
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">The Center close at</label>
-                                        <input type="time" class="form-control" />
+                                        <label for="exampleInputEmail1">The Center close at :</label>
+                                        <input type="time" class="form-control bg- light" />
                                     </div>
-                                    <div class="row d-flex">
+                                    {{-- <div class="row d-flex">
                                         <div class="col">
-                                            <hr color="blue">
+                                            <hr color="  black">
                                         </div>
                                         <div class="col">
-                                            <hr color="blue">
+                                            <hr color="  black">
                                         </div>
 
-                                    </div>
+                                    </div> --}}
                                     {{-- Activities --}}
+                                    <br>
                                     <h4 type="text" class=" btn-warning col d-flex justify-content-center"
                                         data-toggle="modal" data-target="#modal-primary">
                                         Activities
                                     </h4>
+                                    <br>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Minimum Activities Count</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
-                                            placeholder="Enter email">
+                                        <label for="exampleSelectBorder">Minimum Activities Count :
+                                        </label>
+                                        <sub>( 2-150 ) </sub>
+                                        <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60">
+                                            @for ($i = 2; $i <= 150; $i++)
+                                                <option>{{ $i }}</option>
+                                            @endfor
+                                        </select>
                                     </div>
 
                                     {{-- <div class="form-group">
                                         <label for="exampleInputFile">Minimum Activities Available types</label>
                                         <input type="email" class="form-control" id="exampleInputEmail1"
-                                            placeholder="Enter email">
+                                            placeholder=" ">
                                     </div> --}}
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Maximum Activities Count</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
-                                            placeholder="Enter email">
+                                        <label for="exampleSelectBorder">Minimum Activities Count :
+                                        </label>
+                                        <sub>( 2-150 ) </sub>
+                                        <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60">
+                                            @for ($i = 2; $i <= 150; $i++)
+                                                <option>{{ $i }}</option>
+                                            @endfor
+                                        </select>
                                     </div>
-                                    <div class="row d-flex">
+
+                                    {{-- <div class="row d-flex">
                                         <div class="col">
-                                            <hr color="blue">
+                                            <hr color="  black">
                                         </div>
                                         <div class="col">
-                                            <hr color="blue">
+                                            <hr color="  black">
                                         </div>
-                                    </div>
+                                    </div> --}}
+                                    <br>
                                     {{-- Lectures --}}
                                     <h4 type="text" class=" btn-warning col d-flex justify-content-center"
                                         data-toggle="modal" data-target="#modal-primary">
                                         Lectures
-                                    </h4>
+                                    </h4> <br>
 
                                     <div class="form-group">
                                         <label for="exampleSelectBorder">Minimum Lectures Count :
                                         </label>
                                         <sub>( 3-100 ) </sub>
-                                        <select class="selectpicker col-md-12" placeholder="2 to 60">
-                                            @for ($i = 2; $i <= 60; $i++)
+                                        <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60">
+                                            @for ($i = 3; $i <= 100; $i++)
                                                 <option>{{ $i }}</option>
                                             @endfor
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputFile">Minimum Lectures Available types</label>
+                                        <label for="exampleInputFile">Minimum Lectures Available types :</label>
                                         {{-- <input type="email" class="form-control" id="exampleInputEmail1"
-                                            placeholder="Enter email"> --}}
+                                            placeholder=" "> --}}
 
                                             <div class="row">
                                                 <div class="form-check col-md">
-                                                    <input class="form-check-input" type="radio" name="options[]" id="option1" value="option1">
+                                                    <input class="form-check-input bg- light" type="radio" name="options[]" id="option1" value="option1">
                                                     <label class="form-check-label" for="option1">Option 1 </label>
                                                 </div>
                                                 <div class="form-check col-md">
-                                                    <input class="form-check-input" type="radio" name="options[]" id="option2" value="option2">
+                                                    <input class="form-check-input bg- light" type="radio" name="options[]" id="option2" value="option2">
                                                     <label class="form-check-label" for="option2">Option 2 </label>
                                                 </div>
                                                 <div class="form-check col-md">
-                                                    <input class="form-check-input" type="radio" name="options[]" id="option3" value="option3">
+                                                    <input class="form-check-input bg- light" type="radio" name="options[]" id="option3" value="option3">
                                                     <label class="form-check-label" for="option3">Option 3 </label>
                                                 </div>
                                     </div>
+                                    <br>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Maximum Lectures Count</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
-                                            placeholder="Enter email">
+                                        <label for="exampleSelectBorder">Maximum Lectures Count :
+                                        </label>
+                                        <sub>( 3-100 ) </sub>
+                                        <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60">
+                                            @for ($i = 3; $i <= 100; $i++)
+                                                <option>{{ $i }}</option>
+                                            @endfor
+                                        </select>
                                     </div>
 
-                                    <div class="row d-flex">
+                                    {{-- <div class="row d-flex">
                                         <div class="col">
-                                            <hr color="blue">
+                                            <hr color="  orange">
                                         </div>
                                         <div class="col">
-                                            <hr color="blue">
+                                            <hr color="  gray">
+                                        </div>
+                                        <div class="col">
+                                            <hr color="  orange">
                                         </div>
 
-                                    </div>
+                                    </div> --}}
                                     {{-- Plays --}}
+                                    <br>
                                     <h4 type="text" class=" btn-warning col d-flex justify-content-center"
                                         data-toggle="modal" data-target="#modal-primary">
                                         Plays
-                                    </h4>
+                                    </h4><br>
 
 
                                     <div class="form-group">
                                         <label for="exampleSelectBorder">Minimum Plays Count :</label>
                                         <sub>( 1-60 ) </sub>
-                                        <select class="selectpicker col-md-12" placeholder="2 to 60">
+                                        <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60">
                                             @for ($i = 1; $i <= 30; $i++)
                                                 <option>{{ $i }}</option>
                                             @endfor
@@ -179,7 +203,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputFile">Minimum Plays Available types :</label>
                                         {{-- <input type="email" class="form-control" id="exampleInputEmail1"
-                                            placeholder="Enter email"> --}}
+                                            placeholder=" "> --}}
                                             <div class="row">
                                             <div class="form-check col-md">
                                                 <input class="form-check-input" type="radio" name="options[]" id="option1" value="option1">
@@ -194,17 +218,22 @@
                                                 <label class="form-check-label" for="option3">Option 3 </label>
                                             </div>
                                      </div>
+                                     <br>
                                      </div>
 
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Maximum Plays Count</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
-                                            placeholder="Enter email">
+                                     <div class="form-group">
+                                        <label for="exampleSelectBorder">Maximum Plays Count :</label>
+                                        <sub>( 1-60 ) </sub>
+                                        <select class="selectpicker col-md-12 bg- light" placeholder="60" default='60'>
+                                            @for ($i = 1; $i <= 60; $i++)
+                                                <option>{{ $i }}</option>
+                                            @endfor
+                                        </select>
                                     </div>
 
                                 </div>
                                 <!-- /.card-body -->
-
+                                <br>
                                 <div class="card-footer">
                                     <button type="submit"
                                         class="btn btn-primary col d-flex justify-content-center">create</button>
@@ -258,7 +287,7 @@
       "lengthChange": true,
       "searching": true,
       "ordering": true,
-      "info": true,
+      " light": true,
       "autoWidth": true,
       "responsive": true,
     });
