@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebLoginController;
 
@@ -18,54 +19,47 @@ use App\Http\Controllers\WebLoginController;
 
 // Public Routes :
 
-    // Display login form
+// Display login form
 Route::get('/login', [WebLoginController::class, 'showLoginForm']);
 
-    // Handle login form submission
+// Handle login form submission
 Route::post('/login', [WebLoginController::class, 'processLogin'])->name('login');
-
-
 
 
 // Private Routes :
 
 Route::middleware('web-auth')->group(function () {
-    // Protected routes here
-    Route::get('/', function () {
-        return view('web.welcome');
-    })->name('dashboard');
-    // Plans :
-    // index :
-    Route::get('/web/plans', function () {
-    return view('web.plans.index');
-    })->name('plans');
-    // add Plan :
-    Route::get('/web/plans/add', function () {
-    return view('web.plans.add');
-    })->name('plans-add');
-    // update Plan :
-    Route::get('/web/plans/update', function () {
-    return view('web.plans.update');
-    })->name('plans-update');
 
-    // Employees :
-    // index :
-    Route::get('/web/employees', function () {
-    return view('web.employees.index');
-    })->name('employees');
-    // add Employee :
-    Route::get('/web/employees/add', function () {
-    return view('web.employees.add');
-    })->name('employees-add');
-});
+            // Dashboard data & info & welcome View  :
+            Route::get('/',[WelcomeController::class, 'dashboard'] )->name('dashboard');
+            // Plans :
+            // index :
+            Route::get('/web/plans', function () {
+                return view('web.plans.index');
+            })->name('plans');
+            // add Plan :
+            Route::get('/web/plans/add', function () {
+                return view('web.plans.add');
+            })->name('plans-add');
+            // update Plan :
+            Route::get('/web/plans/update', function () {
+                return view('web.plans.update');
+            })->name('plans-update');
+
+            // Employees :
+            // index :
+            Route::get('/web/employees', function () {
+                return view('web.employees.index');
+            })->name('employees');
+            // add Employee :
+            Route::get('/web/employees/add', function () {
+                return view('web.employees.add');
+            })->name('employees-add');
+        });
+
+    // End Private Routes
+
     // edit Permissions :
-    Route::get('/web/employees/edit-permissions', function () {
+Route::get('/web/employees/edit-permissions', function () {
     return view('web.employees.edit-permissions');
-    })->name('employees-edit-permissions');
-
-
-
-
-
-
-
+})->name('employees-edit-permissions');
