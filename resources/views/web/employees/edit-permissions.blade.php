@@ -80,7 +80,16 @@
                                         <td class='text-center' style="font-size: 18px;">majd@gmail.com</td>
 
                                         <td class='text-center' style="font-size: 20px;">
-                                            <span class="badge bg-teal disabled color-palette">5</span>
+                                            {{-- <span class="badge bg-teal disabled color-palette">5</span> --}}
+                                            <span class="badge  disabled bg-primary color-palette">
+                                                <select class="selectpicker col-md-12 " style="font-size: 18px;" placeholder="">
+
+                                                    <option>Teacher </option>
+                                                    <br>
+                                                    <option>User </option>
+
+                                                </select>
+                                            </span>
                                         </td>
 
                                         {{-- <td class='text-center' style="font-size: 20px;"><span
@@ -102,9 +111,22 @@
                             </td> --}}
                                         <td class='text-center' style="font-size: 18px;">raghad@gmail.com</td>
 
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">30</span></td>
                                         {{-- <td class='text-center' style="font-size: 20px;"><span
+                                                class="badge bg-teal disabled color-palette">30</span></td> --}}
+
+                                                <td class='text-center' style="font-size: 20px;">
+                                                    {{-- <span class="badge bg-teal disabled color-palette">5</span> --}}
+                                                    <span class="badge  disabled bg-primary color-palette">
+                                                        <select class="selectpicker col-md-12 " style="font-size: 18px;" placeholder="">
+
+                                                            <option>Teacher </option>
+                                                            <br>
+                                                            <option>User </option>
+
+                                                        </select>
+                                                    </span>
+                                                </td>
+                                                                                                {{-- <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-warning disabled color-palette">67</span></td>
                                         <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-teal disabled color-palette">70</span></td>
@@ -123,8 +145,20 @@
                             </td> --}}
                                         <td class='text-center' style="font-size: 18px;">ruba@gmail.com</td>
 
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">32</span></td>
+                                        {{-- <td class='text-center' style="font-size: 20px;"><span
+                                                class="badge bg-teal disabled color-palette">32</span></td> --}}
+                                                <td class='text-center' style="font-size: 20px;">
+                                                    {{-- <span class="badge bg-teal disabled color-palette">5</span> --}}
+                                                    <span class="badge  disabled bg-primary color-palette">
+                                                        <select class="selectpicker col-md-12 " style="font-size: 18px;" placeholder="">
+
+                                                            <option>Teacher </option>
+                                                            <br>
+                                                            <option>User </option>
+
+                                                        </select>
+                                                    </span>
+                                                </td>
                                         {{-- <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-warning disabled color-palette">46</span></td>
                                         <td class='text-center' style="font-size: 20px;"><span
@@ -145,8 +179,20 @@
                             </td> --}}
                                         <td class='text-center' style="font-size: 18px;">jaafar@gmail.com</td>
 
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">16</span></td>
+                                        {{-- <td class='text-center' style="font-size: 20px;"><span
+                                                class="badge bg-teal disabled color-palette">16</span></td> --}}
+                                                <td class='text-center' style="font-size: 20px;">
+                                                    {{-- <span class="badge bg-teal disabled color-palette">5</span> --}}
+                                                    <span class="badge  disabled bg-primary color-palette">
+                                                        <select class="selectpicker col-md-12 " style="font-size: 18px;" placeholder="">
+
+                                                            <option>Teacher </option>
+                                                            <br>
+                                                            <option>User </option>
+
+                                                        </select>
+                                                    </span>
+                                                </td>
                                         {{-- <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-warning disabled color-palette">23</span></td>
                                         <td class='text-center' style="font-size: 20px;"><span

@@ -2,7 +2,7 @@
 @extends('web.layouts.master')
 
 @section('title')
-    Plans || Add New Employee
+Employees || Add New Employee
 @endsection {{-- or @stop --}}
 
 @section('css')
