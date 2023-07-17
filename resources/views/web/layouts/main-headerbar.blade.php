@@ -8,13 +8,22 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ url('./', []) }}" class="nav-link">Home</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ url('./web/plans', []) }}" class="nav-link">Plans</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ url('./web/employees', []) }}" class="nav-link">Employees</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ url('./web/employees/edit-permissions', []) }}" class="nav-link">Users & Permissions</a>
+      </li>
 
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
           <i class="fas fa-search"></i>
         </a>
@@ -33,7 +42,7 @@
             </div>
           </form>
         </div>
-      </li>
+      </li> --}}
 
 
 

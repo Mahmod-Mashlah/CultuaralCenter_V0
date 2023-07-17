@@ -87,7 +87,7 @@
                   <li class="nav-item">
                     <a href="{{ url('/web/employees/edit-permissions', []) }}" class="nav-link">
                       <i class="far fa fa-wrench nav-icon"></i>
-                     <p> Edit Permissions </p>
+                     <p> Users & Permissions </p>
                     </a>
                   </li>
 

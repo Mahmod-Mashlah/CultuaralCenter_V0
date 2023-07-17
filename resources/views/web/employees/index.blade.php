@@ -81,7 +81,7 @@
                                         <td class='text-center' style="font-size: 18px;">majd@gmail.com</td>
 
                                         <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">5</span></td>
+                                                class="badge bg-yellow disabled color-palette">5</span></td>
                                         {{-- <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-warning disabled color-palette">23</span></td>
                                         <td class='text-center' style="font-size: 20px;"><span
@@ -123,7 +123,7 @@
                                         <td class='text-center' style="font-size: 18px;">ruba@gmail.com</td>
 
                                         <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">32</span></td>
+                                                class="badge bg-orange disabled color-palette">32</span></td>
                                         {{-- <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-warning disabled color-palette">46</span></td>
                                         <td class='text-center' style="font-size: 20px;"><span
@@ -145,7 +145,7 @@
                                         <td class='text-center' style="font-size: 18px;">jaafar@gmail.com</td>
 
                                         <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">16</span></td>
+                                                class="badge bg-pink disabled color-palette">16</span></td>
                                         {{-- <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-warning disabled color-palette">23</span></td>
                                         <td class='text-center' style="font-size: 20px;"><span

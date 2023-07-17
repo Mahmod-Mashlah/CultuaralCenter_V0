@@ -77,20 +77,22 @@ Employees || Add New Employee
                     <div class="col"><hr color="orange"></div>
                     </div>
                     {{--  --}}
-
+                    <br>
                    <div class="form-group">
                        <label for="exampleSelectBorder">Type  :
                        </label>
 
                        <select class="selectpicker col-md-12" placeholder="">
 
-                            <option>Theatre </option>
-                            <option>Library </option>
-                            <option>Activity </option>
+                            <option class="text-black">Theatre </option>
+
+                            <option class="text-black">Library </option>
+                            <option class="text-black">Activity </option>
 
                          </select>
                      </div>
 
+                        <br>
 
 
 
