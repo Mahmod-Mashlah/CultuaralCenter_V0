@@ -13,6 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
+        //Seeding Types For Lectures and Plays :
+        $this->call(TypeLectureSeeder::class);
+        $this->call(TypePlaySeeder::class);
+
         // \App\Models\User::factory(10)->create();
 
        for ($i=1; $i <= 10 ; $i++) {

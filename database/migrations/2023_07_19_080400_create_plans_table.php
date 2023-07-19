@@ -31,7 +31,7 @@ return new class extends Migration
             // Types :
                 // Lecture Types :
                      // cultural', 'educational', 'religious', 'social', 'economic', 'scientific', 'philosophical', 'technical', 'historical', 'political'
-                // Lecture Types :
+                // Play Types :
                      // 'Pantomime', 'Fantasy' , 'Musical','Pantomime','Epic','Drama','Social ','Satire','Modern'
             $table->timestamps();
         });
