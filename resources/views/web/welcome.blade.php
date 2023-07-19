@@ -28,7 +28,9 @@
                     <!-- small box -->
                     <div class="small-box bg-primary">
                         <div class="inner">
-                            <h3 class="text-white">150</h3>
+                            <h3 class="text-white">
+                            15    {{-- {{ $lectures_and_plays_Count }} --}}
+                            </h3>
 
                             <p class="text-white">
                                 Lectures & Plays
@@ -44,7 +46,9 @@
                     <!-- small box -->
                     <div class="small-box bg-primary">
                         <div class="inner">
-                            <h3 class="text-white">53</h3>
+                            <h3 class="text-white">
+                                {{ $booksCount }}
+                            </h3>
 
                             <p class="text-white">Books</p>
                         </div>
@@ -60,7 +64,9 @@
                     <!-- small box -->
                     <div class="small-box bg-primary">
                         <div class="inner">
-                            <h3 class="text-white"> {{ $userCount }} </h3>
+                            <h3 class="text-white">
+                                 {{ $userCount }}
+                                </h3>
 
                             <p class="text-white">Users</p>
                         </div>
@@ -74,7 +80,9 @@
                     <!-- small box -->
                     <div class="small-box bg-primary">
                         <div class="inner">
-                            <h3 class="text-white">97<sup style="font-size: 20px">%</sup></h3>
+                            <h3 class="text-white">
+                               99 {{-- {{ $rating }} --}}
+                                <sup style="font-size: 20px">%</sup></h3>
 
                             <p class="text-white">Rating</p>
                         </div>
