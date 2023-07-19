@@ -51,6 +51,7 @@
                             </h1>
                             <div class="card-tools">
 
+
                                 <button type="button" class="btn btn-tool" data-card-widget="maximize">
                                   <i class="fas fa-expand"></i>
                                 </button>
@@ -209,6 +210,7 @@
                             <h1 class="card-title  text-white">Available Plays And Lectures Types For each plan
                             </h1>
                             <div class="card-tools">
+
 
                                 <button type="button" class="btn btn-tool" data-card-widget="maximize">
                                   <i class="fas fa-expand"></i>
