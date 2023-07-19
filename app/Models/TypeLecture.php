@@ -13,6 +13,8 @@ class TypeLecture extends Model
 
     public function plans()
     {
-        return $this->belongsToMany(Plan::class, 'plans_stores', 'type_lectures_id', 'plans_id');
+        return $this->belongsToMany(Plan::class,
+        //  'plans_stores', 'type_lectures_id', 'plans_id'
+    );
     }
 }

@@ -13,7 +13,10 @@ class PlanController extends Controller
      */
     public function index()
     {
-        //
+        $plans = Plan::all();
+        return view('web.plans.index', compact([
+            'plans',
+        ]));
     }
 
     /**

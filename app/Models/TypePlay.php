@@ -11,6 +11,8 @@ class TypePlay extends Model
 
     public function plans()
     {
-        return $this->belongsToMany(Plan::class, 'plans_stores', 'type_plays_id', 'plans_id');
+        return $this->belongsToMany(Plan::class,
+        //  'plan_', 'type_plays_id', 'plans_id'
+    );
     }
 }

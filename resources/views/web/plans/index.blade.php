@@ -84,15 +84,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
+{{--
                                     <tr>
                                         <td><b>1</b></td>
 
                                         <td style="font-size: 20px;"><i> 10/4/2023
                                             </i></td>
-                                        {{-- <td class='text-center' style="font-size: 18px;">
+                        <td class='text-center' style="font-size: 18px;">
                         <button type="button" class="btn btn-primary btn-block"> Edit</button>
-                        </td> --}}
+                        </td>
                                         <td class='text-center' style="font-size: 18px;">8:00</td>
                                         <td class='text-center' style="font-size: 18px;">14:00</td>
                                         <td class='text-center' style="font-size: 20px;"><span
@@ -107,82 +107,33 @@
                                                 class="badge bg-teal disabled color-palette">6</span></td>
                                         <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-warning disabled color-palette">19</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>2</b></td>
-                                        <td style="font-size: 20px;"><i> 10/3/2022 </i></td>
-                                        {{-- <td class='text-center' style="font-size: 18px;">
-                            <button type="button" class="btn btn-primary btn-block"> Edit</button>
-                            </td> --}}
-                                        <td class='text-center' style="font-size: 18px;">9:00</td>
-                                        <td class='text-center' style="font-size: 18px;">16:00</td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">30</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">67</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">70</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">90</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">43</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">100</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>3</b></td>
-                                        <td style="font-size: 20px;"><i> 10/3/2023 </i></td>
-                                        {{-- <td class='text-center' style="font-size: 18px;">
-                            <button type="button" class="btn btn-primary btn-block"> Edit</button>
-                            </td> --}}
-                                        <td class='text-center' style="font-size: 18px;">10:00</td>
-                                        <td class='text-center' style="font-size: 18px;">21:00</td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">32</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">46</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">12</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">23</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">29</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">44</span></td>
-                                    </tr>
+                                    </tr> --}}
 
-                                    <tr>
-                                        <td><b>4</b></td>
-                                        <td style="font-size: 20px;"><i> 12/3/2021 </i></td>
-                                        {{-- <td class='text-center' style="font-size: 18px;">
-                            <button type="button" class="btn btn-primary btn-block"> Edit</button>
-                            </td> --}}
-                                        <td class='text-center' style="font-size: 18px;">10:00</td>
-                                        <td class='text-center' style="font-size: 18px;">23:00</td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">16</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">23</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">53</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">73</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">63</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">67</span></td>
-                                    </tr>
+                            @foreach ($plans as $plan)
+                                <tr>
+                                <td> <b> {{ $plan->id }} </b></td>
+                                <td style="font-size: 20px;"> <i> {{ $plan->date }} </i></td>
+                                <td class='text-center' style="font-size: 18px;"> {{ $plan->start_time }}</td>
+                                <td class='text-center' style="font-size: 18px;">{{ $plan->end_time }}</td>
+                                <td class='text-center' style="font-size: 20px;"><span
+                                    class="badge bg-teal disabled color-palette">{{ $plan->min_activities }}</span></td>
+                                <td class='text-center' style="font-size: 20px;"><span
+                                    class="badge bg-warning disabled color-palette"> {{ $plan->max_activities }} </span></td>
+                                <td class='text-center' style="font-size: 20px;"><span
+                                    class="badge bg-teal disabled color-palette">{{ $plan->min_lectures }}</span></td>
+                                <td class='text-center' style="font-size: 20px;"><span
+                                    class="badge bg-warning disabled color-palette">{{ $plan->max_lectures }}</span></td>
+                                <td class='text-center' style="font-size: 20px;"><span
+                                    class="badge bg-teal disabled color-palette">{{ $plan->min_plays }}</span></td>
+                                <td class='text-center' style="font-size: 20px;"><span
+                                    class="badge bg-warning disabled color-palette">{{ $plan->max_plays }}</span></td>
+                                    {{-- <td class='text-center' style="font-size: 18px;">
+                               <button type="button" class="btn btn-primary btn-block"> Edit</button>
+                               </td> --}}
+                                </tr>
+                            @endforeach
+                                    </tbody>
 
-                                </tbody>
-                                {{-- <tbody>
-                        @foreach ($users as $user)
-                        <tr>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                        <!-- Add more table cells with user data if needed -->
-                        </tr>
-                        @endforeach
-                     </tbody> --}}
                                 <tfoot>
                                     {{-- <tr>
                             <th style="width: 1%"><b> #</b></th>

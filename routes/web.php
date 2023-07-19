@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebLoginController;
@@ -34,9 +35,8 @@ Route::middleware('web-auth')->group(function () {
             Route::get('/',[WelcomeController::class, 'dashboard'] )->name('dashboard');
             // Plans :
             // index :
-            Route::get('/web/plans', function () {
-                return view('web.plans.index');
-            })->name('plans');
+
+            Route::get('/web/plans',[PlanController::class, 'index'] )->name('plans');
             // add Plan :
             Route::get('/web/plans/add', function () {
                 return view('web.plans.add');
