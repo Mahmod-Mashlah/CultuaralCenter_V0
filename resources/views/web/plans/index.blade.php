@@ -43,10 +43,25 @@
                       <h1>Buttons</h1>
                     </div>
                 </div>  --}}
+
+                    {{-- First Table --}}
                     <div class="card">
                         <div class="card-header bg-blue">
                             <h1 class="card-title  text-white">These are all Plans in this Center
                             </h1>
+                            <div class="card-tools">
+
+                                <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                                  <i class="fas fa-expand"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                  <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                  <i class="fas fa-times"></i>
+                                </button>
+                              </div>
+                              <!-- /.card-tools -->
                         </div>
 
                         <!-- /.card-header -->
@@ -163,10 +178,10 @@
                         <tr>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
-                            <!-- Add more table cells with user data if needed -->
+                        <!-- Add more table cells with user data if needed -->
                         </tr>
                         @endforeach
-                    </tbody> --}}
+                     </tbody> --}}
                                 <tfoot>
                                     {{-- <tr>
                             <th style="width: 1%"><b> #</b></th>
@@ -186,9 +201,132 @@
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
+                    {{-- End of First Table  --}}
 
-                </div>
-                <!-- /.col -->
+                    {{-- Second Table --}}
+                    <div class="card">
+                        <div class="card-header bg-blue">
+                            <h1 class="card-title  text-white">Available Plays And Lectures Types For each plan
+                            </h1>
+                            <div class="card-tools">
+
+                                <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                                  <i class="fas fa-expand"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                  <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                  <i class="fas fa-times"></i>
+                                </button>
+                              </div>
+                              <!-- /.card-tools -->
+                        </div>
+
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="table2" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 1%"><b>#</b></th>
+                                        <th style="width: 19%" class='text-center'>Start Date </th>
+                                        {{-- <th style="width: 10%" >Edit Plan </th> --}}
+
+                                        <th class='text-center' style="width: 40%">Minimum Available Plays Types</th>
+                                        <th class='text-center' style="width: 40%">Minimum Available Lecturess Types</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td><b>1</b></td>
+
+                                        <td style="font-size: 20px;" class='text-center'><i> 10/4/2023
+                                            </i></td>
+                                        {{-- <td class='text-center' style="font-size: 18px;">
+                        <button type="button" class="btn btn-primary btn-block"> Edit</button>
+                        </td> --}}
+
+                                        <td class='text-center' style="font-size: 20px;"><span
+                                                class="badge bg-teal disabled color-palette">5</span></td>
+                                        <td class='text-center' style="font-size: 20px;"><span
+                                                class="badge bg-warning disabled color-palette">23</span></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><b>2</b></td>
+                                        <td style="font-size: 20px;" class='text-center'><i> 10/3/2022 </i></td>
+                                        {{-- <td class='text-center' style="font-size: 18px;">
+                            <button type="button" class="btn btn-primary btn-block"> Edit</button>
+                            </td> --}}
+
+
+                                        <td class='text-center' style="font-size: 20px;"><span
+                                                class="badge bg-teal disabled color-palette">70</span></td>
+                                        <td class='text-center' style="font-size: 20px;"><span
+                                                class="badge bg-warning disabled color-palette">90</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>3</b></td>
+                                        <td style="font-size: 20px;" class='text-center'><i> 10/3/2023 </i></td>
+                                        {{-- <td class='text-center' style="font-size: 18px;">
+                            <button type="button" class="btn btn-primary btn-block"> Edit</button>
+                            </td> --}}
+
+
+                                        <td class='text-center' style="font-size: 20px;"><span
+                                                class="badge bg-teal disabled color-palette">12</span></td>
+                                        <td class='text-center' style="font-size: 20px;"><span
+                                                class="badge bg-warning disabled color-palette">23</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><b>4</b></td>
+                                        <td style="font-size: 20px;" class='text-center'><i> 12/3/2021 </i></td>
+                                        {{-- <td class='text-center' style="font-size: 18px;">
+                            <button type="button" class="btn btn-primary btn-block"> Edit</button>
+                            </td> --}}
+
+
+                                        <td class='text-center' style="font-size: 20px;"><span
+                                                class="badge bg-teal disabled color-palette">53</span></td>
+                                        <td class='text-center' style="font-size: 20px;"><span
+                                                class="badge bg-warning disabled color-palette">73</span></td>
+
+                                    </tr>
+
+                                </tbody>
+                                {{-- <tbody>
+                        @foreach ($users as $user)
+                        <tr>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <!-- Add more table cells with user data if needed -->
+                        </tr>
+                        @endforeach
+                     </tbody> --}}
+                                <tfoot>
+                                    {{-- <tr>
+                            <th style="width: 1%"><b> #</b></th>
+                            <th style="width: 19%" >Start Date </th>
+                            <th style="width: 10%" >Opens at</th>
+                            <th style="width: 10%" >Closes at</th>
+                            <th class='text-center' style="width: 10%">Min Plays </th>
+                            <th class='text-center' style="width: 10%">MaxPlays </th>
+                            <th class='text-center' style="width: 10%" >Min Activities</th>
+                            <th class='text-center' style="width: 10%" >Max Activities</th>
+                            <th class='text-center' style="width: 10%" >Min Lectures</th>
+                            <th class='text-center' style="width: 10%" >Max Lectures</th>
+                          </tr> --}}
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                    {{-- End of Econd Table  --}}
+
+
             </div>
             <!-- /.row -->
         </div>
@@ -231,6 +369,23 @@
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
             $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                "responsive": true,
+            });
+        });
+        $(function() {
+            $("#table2").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#table2_wrapper .col-md-6:eq(0)');
+            $('#table2').DataTable({
                 "paging": true,
                 "lengthChange": true,
                 "searching": true,
