@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->time('start_time');
-            $table->time('end_time');
+            $table->date('date')->default('2023-01-01');
+            $table->time('start_time')->default('08:00:00');
+            $table->time('end_time')->default('15:00:00');
             // Activities :
             $table->integer('min_activities')->default(2);
             $table->integer('max_activities')->default(150);
