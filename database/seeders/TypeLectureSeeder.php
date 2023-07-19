@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\TypeLecture;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class TypeLectureSeeder extends Seeder
 {
@@ -16,7 +17,7 @@ class TypeLectureSeeder extends Seeder
                 // Lecture Types :
                      // cultural', 'educational', 'religious', 'social', 'economic', 'scientific', 'philosophical', 'technical', 'historical', 'political'
 
-        \App\Models\TypeLecture::factory()->create([
+        TypeLecture::factory()->create([
             'id' => '1',
             'type' => 'cultural',
         ]);

@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\TypePlay;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class TypePlaySeeder extends Seeder
 {
@@ -12,50 +13,50 @@ class TypePlaySeeder extends Seeder
      */
     public function run(): void
     {
-        //     // Lecture Types :
+        //     // PlaTypePlay Types :
                      // 'Pantomime', 'Fantasy' , 'Musical','Pantomime','Epic','Drama','Social ','Satire','Modern'
 
-            \App\Models\TypeLecture::factory()->create([
+            TypePlay::factory()->create([
             'id' => '1',
             'type' => 'Pantomime',
         ]);
 
-        \App\Models\TypeLecture::factory()->create([
+        \App\Models\TypePlay::factory()->create([
             'id' => '2',
             'type' => 'Fantasy',
                 ]);
 
-            \App\Models\TypeLecture::factory()->create([
+            \App\Models\TypePlay::factory()->create([
                 'id' => '3',
                 'type' => 'Musical',
                     ]);
 
-            \App\Models\TypeLecture::factory()->create([
+            \App\Models\TypePlay::factory()->create([
                 'id' => '4',
                 'type' => 'Pantomime',
                     ]);
 
-            \App\Models\TypeLecture::factory()->create([
+            \App\Models\TypePlay::factory()->create([
                 'id' => '5',
                 'type' => 'Epic',
                     ]);
 
-            \App\Models\TypeLecture::factory()->create([
+            \App\Models\TypePlay::factory()->create([
                 'id' => '6',
                 'type' => 'Drama',
                     ]);
 
-            \App\Models\TypeLecture::factory()->create([
+            \App\Models\TypePlay::factory()->create([
                 'id' => '7',
                 'type' => 'Social',
                     ]);
 
-            \App\Models\TypeLecture::factory()->create([
+            \App\Models\TypePlay::factory()->create([
                 'id' => '8',
                 'type' => 'Satire',
                     ]);
 
-            \App\Models\TypeLecture::factory()->create([
+            \App\Models\TypePlay::factory()->create([
                 'id' => '9',
                 'type' => 'Modern',
                     ]);
