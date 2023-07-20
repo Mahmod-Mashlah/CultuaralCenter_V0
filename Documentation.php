@@ -256,6 +256,7 @@ class LoginUserRequest extends FormRequest
 
 ////////////////////////////////////////////////
 git config http.postBuffer 524288000
+git config --global http.postBuffer 524288000
 ////////////////////////////////////////////////
 
 composer remove laravel/jetstream
