@@ -312,6 +312,7 @@
                 "info": true,
                 "autoWidth": true,
                 "responsive": true,
+                "bDestroy": true
             });
         });
     </script>
