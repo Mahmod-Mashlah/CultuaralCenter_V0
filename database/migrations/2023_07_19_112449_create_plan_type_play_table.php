@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBiginteger('plan_id')->unsigned();
-            $table->unsignedBiginteger('type_play_id')->unsigned();
+            $table->unsignedBiginteger('type_play_id')->unsigned()->nullable();
 
             $table->foreign('plan_id')->references('id')
                  ->on('plans')->onDelete('cascade');

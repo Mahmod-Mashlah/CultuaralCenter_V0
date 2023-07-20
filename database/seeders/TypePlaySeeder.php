@@ -21,43 +21,38 @@ class TypePlaySeeder extends Seeder
             'type' => 'Pantomime',
         ]);
 
-        \App\Models\TypePlay::factory()->create([
+        TypePlay::factory()->create([
             'id' => '2',
             'type' => 'Fantasy',
                 ]);
 
-            \App\Models\TypePlay::factory()->create([
+            TypePlay::factory()->create([
                 'id' => '3',
                 'type' => 'Musical',
                     ]);
 
-            \App\Models\TypePlay::factory()->create([
+            TypePlay::factory()->create([
                 'id' => '4',
-                'type' => 'Pantomime',
-                    ]);
-
-            \App\Models\TypePlay::factory()->create([
-                'id' => '5',
                 'type' => 'Epic',
                     ]);
 
-            \App\Models\TypePlay::factory()->create([
-                'id' => '6',
+            TypePlay::factory()->create([
+                'id' => '5',
                 'type' => 'Drama',
                     ]);
 
-            \App\Models\TypePlay::factory()->create([
-                'id' => '7',
+            TypePlay::factory()->create([
+                'id' => '6',
                 'type' => 'Social',
                     ]);
 
-            \App\Models\TypePlay::factory()->create([
-                'id' => '8',
+            TypePlay::factory()->create([
+                'id' => '7',
                 'type' => 'Satire',
                     ]);
 
-            \App\Models\TypePlay::factory()->create([
-                'id' => '9',
+            TypePlay::factory()->create([
+                'id' => '8',
                 'type' => 'Modern',
                     ]);
     }

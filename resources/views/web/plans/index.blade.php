@@ -75,12 +75,12 @@
                                         {{-- <th style="width: 10%" >Edit Plan </th> --}}
                                         <th style="width: 10%">Opens at</th>
                                         <th class='middle' style="width: 10%">Closes at</th>
-                                        <th class='text-center' style="width: 10%">Min Plays </th>
-                                        <th class='text-center' style="width: 10%">Max Plays </th>
-                                        <th class='text-center' style="width: 10%">Min Activities</th>
-                                        <th class='text-center' style="width: 10%">Max Activities</th>
                                         <th class='text-center' style="width: 10%">Min Lectures</th>
                                         <th class='text-center' style="width: 10%">Max Lectures</th>
+                                        <th class='text-center' style="width: 10%">Min Activities</th>
+                                        <th class='text-center' style="width: 10%">Max Activities</th>
+                                        <th class='text-center' style="width: 10%">Min Plays </th>
+                                        <th class='text-center' style="width: 10%">Max Plays </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -96,15 +96,15 @@
                                         <td class='text-center' style="font-size: 18px;">8:00</td>
                                         <td class='text-center' style="font-size: 18px;">14:00</td>
                                         <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">5</span></td>
+                                                class="badge bg-olive disabled color-palette">5</span></td>
                                         <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-warning disabled color-palette">23</span></td>
                                         <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">7</span></td>
+                                                class="badge bg-olive disabled color-palette">7</span></td>
                                         <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-warning disabled color-palette">29</span></td>
                                         <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">6</span></td>
+                                                class="badge bg-olive disabled color-palette">6</span></td>
                                         <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-warning disabled color-palette">19</span></td>
                                     </tr> --}}
@@ -112,21 +112,27 @@
                             @foreach ($plans as $plan)
                                 <tr>
                                 <td> <b> {{ $plan->id }} </b></td>
-                                <td style="font-size: 20px;"> <i> {{ $plan->date }} </i></td>
-                                <td class='text-center' style="font-size: 18px;"> {{ $plan->start_time }}</td>
-                                <td class='text-center' style="font-size: 18px;">{{ $plan->end_time }}</td>
-                                <td class='text-center' style="font-size: 20px;"><span
-                                    class="badge bg-teal disabled color-palette">{{ $plan->min_activities }}</span></td>
-                                <td class='text-center' style="font-size: 20px;"><span
-                                    class="badge bg-warning disabled color-palette"> {{ $plan->max_activities }} </span></td>
-                                <td class='text-center' style="font-size: 20px;"><span
-                                    class="badge bg-teal disabled color-palette">{{ $plan->min_lectures }}</span></td>
-                                <td class='text-center' style="font-size: 20px;"><span
-                                    class="badge bg-warning disabled color-palette">{{ $plan->max_lectures }}</span></td>
-                                <td class='text-center' style="font-size: 20px;"><span
-                                    class="badge bg-teal disabled color-palette">{{ $plan->min_plays }}</span></td>
-                                <td class='text-center' style="font-size: 20px;"><span
-                                    class="badge bg-warning disabled color-palette">{{ $plan->max_plays }}</span></td>
+                                <td style="font-size: 20px;"> <i>
+                                {{ Carbon\Carbon::parse($plan->date)->format('j/n/Y') }}
+                                 </i></td>
+                                <td class='text-center' style="font-size: 18px;">
+                                {{ Carbon\Carbon::parse($plan->start_time)->format('g:i a') }}
+                                </td>
+                                <td class='text-center' style="font-size: 18px;">
+                                {{ Carbon\Carbon::parse($plan->end_time)->format('g:i a') }}
+                                </td>
+                                <td class='text-center' style="font-size: 23px;"><span
+                                    class="badge text-olive disabled color-palette">{{ $plan->min_lectures }}</span></td>
+                                    <td class='text-center' style="font-size: 23px;"><span
+                                        class="badge text-maroon disabled color-palette">{{ $plan->max_lectures }}</span></td>
+                                        <td class='text-center' style="font-size: 23px;"><span
+                                            class="badge text-olive disabled color-palette">{{ $plan->min_activities }}</span></td>
+                                            <td class='text-center' style="font-size: 23px;"><span
+                                                class="badge text-maroon disabled color-palette"> {{ $plan->max_activities }} </span></td>
+                                <td class='text-center' style="font-size: 23px;"><span
+                                    class="badge text-olive disabled color-palette">{{ $plan->min_plays }}</span></td>
+                                <td class='text-center' style="font-size: 23px;"><span
+                                    class="badge text-maroon disabled color-palette">{{ $plan->max_plays }}</span></td>
                                     {{-- <td class='text-center' style="font-size: 18px;">
                                <button type="button" class="btn btn-primary btn-block"> Edit</button>
                                </td> --}}
@@ -185,79 +191,39 @@
                                         <th style="width: 19%" class='text-center'>Start Date </th>
                                         {{-- <th style="width: 10%" >Edit Plan </th> --}}
 
-                                        <th class='text-center' style="width: 40%">Minimum Available Plays Types</th>
                                         <th class='text-center' style="width: 40%">Minimum Available Lecturess Types</th>
+                                        <th class='text-center' style="width: 40%">Minimum Available Plays Types</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
+
+                                @foreach ($plans as $plan)
                                     <tr>
-                                        <td><b>1</b></td>
+                                    <td> <b> {{ $plan->id }} </b></td>
+                                    <td style="font-size: 20px;" class='text-center'> <i>
+                                    {{ Carbon\Carbon::parse($plan->date)->format('j/n/Y') }}
+                                    </i></td>
 
-                                        <td style="font-size: 20px;" class='text-center'><i> 10/4/2023
-                                            </i></td>
-                                        {{-- <td class='text-center' style="font-size: 18px;">
-                        <button type="button" class="btn btn-primary btn-block"> Edit</button>
-                        </td> --}}
+                                    <td class='text-center' style="font-size: 23px;"><span
+                                        class="badge text-olive disabled color-palette">
+                                        @foreach ($plan->type_lectures->unique('type') as $lecture)
+                                            {{ $lecture->type }},
+                                        @endforeach
+                                    </span></td>
 
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">5</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">23</span></td>
+                                    <td class='text-center' style="font-size: 23px;"><span
+                                        class="badge text-pink disabled color-palette">
+                                        @foreach ($plan->type_plays->unique('type') as $play)
+                                            {{ $play->type }},
+                                        @endforeach
+                                    </span></td>
 
                                     </tr>
-                                    <tr>
-                                        <td><b>2</b></td>
-                                        <td style="font-size: 20px;" class='text-center'><i> 10/3/2022 </i></td>
-                                        {{-- <td class='text-center' style="font-size: 18px;">
-                            <button type="button" class="btn btn-primary btn-block"> Edit</button>
-                            </td> --}}
-
-
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">70</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">90</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>3</b></td>
-                                        <td style="font-size: 20px;" class='text-center'><i> 10/3/2023 </i></td>
-                                        {{-- <td class='text-center' style="font-size: 18px;">
-                            <button type="button" class="btn btn-primary btn-block"> Edit</button>
-                            </td> --}}
-
-
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">12</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">23</span></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><b>4</b></td>
-                                        <td style="font-size: 20px;" class='text-center'><i> 12/3/2021 </i></td>
-                                        {{-- <td class='text-center' style="font-size: 18px;">
-                            <button type="button" class="btn btn-primary btn-block"> Edit</button>
-                            </td> --}}
-
-
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">53</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">73</span></td>
-
-                                    </tr>
+                            @endforeach
 
                                 </tbody>
-                                {{-- <tbody>
-                        @foreach ($users as $user)
-                        <tr>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <!-- Add more table cells with user data if needed -->
-                        </tr>
-                        @endforeach
-                     </tbody> --}}
+
                                 <tfoot>
                                     {{-- <tr>
                             <th style="width: 1%"><b> #</b></th>

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('plan_type_lecture', function (Blueprint $table) {
             $table->id();
             $table->unsignedBiginteger('plan_id')->unsigned();
-            $table->unsignedBiginteger('type_lecture_id')->unsigned();
+            $table->unsignedBiginteger('type_lecture_id')->unsigned()->nullable();
 
             $table->foreign('plan_id')->references('id')
                  ->on('plans')->onDelete('cascade');
