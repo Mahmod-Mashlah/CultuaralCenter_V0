@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
         //Seeding Types For Lectures and Plays :
         $this->call(TypeLectureSeeder::class);
         $this->call(TypePlaySeeder::class);
+        // Department Seeder :
+        $this->call(DepartmentSeeder::class);
+        // Plan Seeder :
         // $this->call(PlanSeeder::class);
 
         // \App\Models\User::factory(10)->create();
