@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Plan;
 use App\Http\Requests\StorePlanRequest;
 use App\Http\Requests\UpdatePlanRequest;
+use App\Models\TypeLecture;
+use App\Models\TypePlay;
+use Database\Factories\TypeLectureFactory;
 
 class PlanController extends Controller
 {
@@ -25,8 +28,10 @@ class PlanController extends Controller
     public function create()
     {
         $plans = Plan::all();
+        $lectures = TypeLecture::all();
+        $plays = TypePlay::all();
         return view('web.plans.add' ,compact([
-            'plans',
+            'plans','lectures','plays'
         ]));
     }
 

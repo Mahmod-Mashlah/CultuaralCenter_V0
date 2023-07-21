@@ -548,3 +548,79 @@ iframe {
 
 
 
+/* ----------------------------------------- */
+/* .multiselect {
+    width: 200px;
+  }
+
+  .selectBox {
+    position: relative;
+  }
+
+  .selectBox select {
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  #checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+  }
+
+  #checkboxes label {
+    display: block;
+  }
+
+  #checkboxes label:hover {
+    background-color: #1e90ff;
+  } */
+
+
+  /* ------------------------------------------------------- */
+
+  .multiselect {
+    display: inline-block;
+  }
+
+  .selectBox {
+    position: relative;
+  }
+
+  .selectBox label {
+    font-weight: bold;
+  }
+
+  .selectBox input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0}
+
+  .options {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+
+  .options div {
+    padding: 5px;
+  }
+
+  .options label {
+    display: block;
+  }
+
+  .select input:checked ~ .options {
+    display: block;
+  }

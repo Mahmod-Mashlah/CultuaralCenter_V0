@@ -17,6 +17,9 @@
 
     <!-- Theme style -->
     <link rel="stylesheet" href=" {{ asset('assets/css/adminlte.min.css') }}">
+    <!-- Others Bootstrap -->
+    <link rel="stylesheet" href=" {{ asset('assets/css/main.css') }}">
+
 @endsection
 
 @section('root')
@@ -95,9 +98,9 @@
                                  </h4> <br>
 
                                  <div class="form-group">
-                                     <label for="min_lectures">Minimum Lectures Count :
+                                     <label for="min_lectures">Minimum Lectures Count :  <sub>( 3-100 ) </sub>
                                      </label>
-                                     <sub>( 3-100 ) </sub>
+
                                      <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60" id="min_lectures"  name="min_lectures">
                                          @for ($i = 3; $i <= 100; $i++)
                                          <option>{{ $i }}</option>
@@ -105,21 +108,34 @@
                                      </select>
                                  </div>
                                  <div class="form-group">
-                                         <label for="exampleInputFile">Minimum Lectures Available types :</label>
-                                         {{-- <input type="email" class="form-control" id="exampleInputEmail1"
-                                             placeholder=" "> --}}
+                                         <label for="lectures">Minimum Lectures Available types :</label>
+                                         <br>
 
 
+        {{-- Lectures Types --}}
+        {{-- <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60" id="max_lectures"  name="max_lectures">
+            @for ($i = 3; $i <= 100; $i++)
+            <option>{{ $i }}</option>
+            @endfor
+        </select> --}}
+        {{-- <div class="multiselect col-md-12">
+            <div class="selectBox" onclick="showCheckboxes()">
+              <select>
+                <option>Select an option</option>
+              </select>
+              <div class="overSelect"></div>
+            </div>
+            <div id="checkboxes">
+              <label for="one">
+                <input type="checkbox" id="one" /> First checkbox</label>
+                @foreach($roles as $role)
+                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                @endforeach
+            </div>
+          </div> --}}
 
 
-                                             <input type="text" name="lectures" placeholder="lectures">
-
-                                             <select name="lectures[]" multiple>
-                                                 @foreach($plans as $plan)
-                                                     <option value="{{ $plan->id }}">{{ $plan->type_lectures }}</option>
-                                                 @endforeach
-                                             </select>
-
+        {{-- End Lectures Types --}}
 
 {{--
                                              <div class="row">
@@ -136,12 +152,13 @@
                                                      <label class="form-check-label" for="option3">Option 3 </label>
                                                  </div>
                                      </div> --}}
-                                     <br>
+
+                                     <br><br>
                                      <div class="form-group">
-                                         <label for="max_lectures">Maximum Lectures Count :
+                                         <label for="max_lectures">Maximum Lectures Count : <sub>( 3-100 ) </sub>
                                          </label>
-                                         <sub>( 3-100 ) </sub>
-                                         <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60" id="max_lectures"  name="max_lectures">
+
+                                         <select class="selectpicker col-md-12 bg-light" placeholder="2 to 60" id="max_lectures"  name="max_lectures">
                                              @for ($i = 3; $i <= 100; $i++)
                                              <option>{{ $i }}</option>
                                              @endfor
@@ -170,9 +187,9 @@
                                     </h4>
                                     <br>
                                     <div class="form-group">
-                                        <label for="min_activities">Minimum Activities Count :
+                                        <label for="min_activities">Minimum Activities Count : <sub>( 2-150 ) </sub>
                                         </label>
-                                        <sub>( 2-150 ) </sub>
+
                                         <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60" id="min_activities"  name="min_activities" >
                                             @for ($i = 2; $i <= 150; $i++)
                                                 <option id="min_activities"  name="min_activities" >{{ $i }}</option>
@@ -186,9 +203,9 @@
                                             placeholder=" ">
                                     </div> --}}
                                     <div class="form-group">
-                                        <label for="max_activities">Maximum Activities Count :
+                                        <label for="max_activities">Maximum Activities Count : <sub>( 2-150 ) </sub>
                                         </label>
-                                        <sub>( 2-150 ) </sub>
+
                                         <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60" id="max_activities"  name="max_activities">
                                             @for ($i = 2; $i <= 150; $i++)
                                                 <option>{{ $i }}</option>
@@ -215,8 +232,9 @@
 
 
                                     <div class="form-group">
-                                        <label for="min_plays">Minimum Plays Count :</label>
-                                        <sub>( 1-60 ) </sub>
+                                        <label for="min_plays">Minimum Plays Count : <sub>( 1-60 ) </sub>
+                                        </label>
+
                                         <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60" id="min_plays"  name="min_plays">
                                             @for ($i = 1; $i <= 30; $i++)
                                             <option>{{ $i }}</option>
@@ -246,8 +264,8 @@
                                      </div>
 
                                      <div class="form-group">
-                                        <label for="max_plays">Maximum Plays Count :</label>
-                                        <sub>( 1-60 ) </sub>
+                                        <label for="max_plays">Maximum Plays Count : <sub>( 1-60 ) </sub></label>
+
                                         <select class="selectpicker col-md-12 bg- light" placeholder="60" default='60' id="max_plays"  name="max_plays">
                                             @for ($i = 1; $i <= 60; $i++)
                                                 <option>{{ $i }}</option>
@@ -301,6 +319,7 @@
     <script src="{{ URL::asset('assets/js/adminlte.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ URL::asset('assets/js/demo.js') }}"></script>
+
     <!-- Page specific script -->
     {{-- <script>
   $(function () {
