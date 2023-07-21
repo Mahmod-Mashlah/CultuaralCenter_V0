@@ -31,16 +31,19 @@ Route::post('/login', [WebLoginController::class, 'processLogin'])->name('login'
 
 Route::middleware('web-auth')->group(function () {
 
-            // Dashboard data & info & welcome View  :
+        // Dashboard data & info & welcome View  :
             Route::get('/',[WelcomeController::class, 'dashboard'] )->name('dashboard');
-            // Plans :
+        // Plans :
+
             // index :
 
             Route::get('/web/plans',[PlanController::class, 'index'] )->name('plans');
+
             // add Plan :
-            Route::get('/web/plans/add', function () {
-                return view('web.plans.add');
-            })->name('plans-add');
+            Route::get('/web/plans/add', [PlanController::class, 'create'])->name('plans.add');
+            Route::post('/web/plans/add', [PlanController::class, 'store'])->name('plans.store');
+
+
             // update Plan :
             Route::get('/web/plans/update', function () {
                 return view('web.plans.update');

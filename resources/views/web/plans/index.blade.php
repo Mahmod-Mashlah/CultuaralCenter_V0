@@ -45,6 +45,11 @@
                 </div>  --}}
 
                     {{-- First Table --}}
+
+                    @if(session('success'))
+                                <div>{{ session('success') }}</div>
+                            @endif
+
                     <div class="card">
                         <div class="card-header bg-blue">
                             <h1 class="card-title  text-white">These are all Plans in this Center
@@ -287,8 +292,8 @@
                 "autoWidth": false,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
+            $().DataTable({
+                "paging": false,
                 "lengthChange": true,
                 "searching": true,
                 "ordering": true,
@@ -304,7 +309,7 @@
                 "autoWidth": false,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#table2_wrapper .col-md-6:eq(0)');
-            $('#table2').DataTable({
+            $().DataTable({
                 "paging": true,
                 "lengthChange": true,
                 "searching": true,
@@ -312,7 +317,7 @@
                 "info": true,
                 "autoWidth": true,
                 "responsive": true,
-                "bDestroy": true
+                // "bDestroy": true
             });
         });
     </script>
