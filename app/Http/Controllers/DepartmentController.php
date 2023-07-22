@@ -61,7 +61,8 @@ class DepartmentController extends Controller
                 // 'user_id' => $request->department_name, //as an exapmle
         ]);
 
-        return new DepartmentsResource($department) ;
+        return $this->success(new DepartmentsResource($department),'Department has created Successfuly ',200);
+
     }
 
     public function show(Department $department)
@@ -82,7 +83,9 @@ class DepartmentController extends Controller
         $department->update($request->all());
         $department->save();
 
-        return new DepartmentsResource($department);
+
+        return $this->success(new DepartmentsResource($department),'Department has Updated Successfuly ',200);
+
     }
 
 

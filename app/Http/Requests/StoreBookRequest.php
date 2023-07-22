@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreBookRequest extends FormRequest
@@ -27,6 +28,15 @@ class StoreBookRequest extends FormRequest
             'amount' => ['required','integer','max:100','min:0'],
             'type' => ['required','string','max:255','exists:departments,name'],
             'row' => ['required','string','max:255'],
+
+
+            // 'column_to_validate' => [
+            //     'required',
+            //     Rule::unique('your_table_name')->where(function ($query) {
+            //         $query->where('another_column', $this->input('another_column'))
+            //               ->where('column_to_compare', '>', $this->input('column_to_validate'));
+            //     }),
+            // ],
 
             //relations :
 

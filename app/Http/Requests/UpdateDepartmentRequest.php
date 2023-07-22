@@ -22,13 +22,13 @@ class UpdateDepartmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required','string','unique:departments,name','max:255',],
+            'name' => ['required','unique:departments,name','string','max:255',],
             'rows_count' => ['required','integer','max:100','min:3'],
             'max_row_books' => ['required','integer','max:300','min:3'],
 
             //relations :
 
-                // 'department_name' =>['in:something,something else']
+            // 'department_name' =>['in:something,something else']
         ];
     }
 }

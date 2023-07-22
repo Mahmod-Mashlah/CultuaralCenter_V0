@@ -8,7 +8,7 @@ use App\Http\Requests\UpdatePlanRequest;
 use App\Models\TypeLecture;
 use App\Models\TypePlay;
 use Database\Factories\TypeLectureFactory;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class PlanController extends Controller
 {
     /**
@@ -35,9 +35,7 @@ class PlanController extends Controller
         ]));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(StorePlanRequest $request)
     {
         //
@@ -76,6 +74,8 @@ class PlanController extends Controller
 
         $plan->save();
         // Redirect or return a response
+        Alert::success('Done !', 'a new plan has been created Successfully');
+
         return redirect()->route('plans')->with('success', 'A new Plan has created successfully!');
     }
 

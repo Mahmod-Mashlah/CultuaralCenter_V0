@@ -46,9 +46,18 @@
 
                     {{-- First Table --}}
 
-                    @if(session('success'))
-                                <div>{{ session('success') }}</div>
-                            @endif
+                    {{-- @if(session('success'))
+                            <script>
+
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'A new Plan has been created Successfully',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            </script>
+                            @endif --}}
 
                     <div class="card">
                         <div class="card-header bg-blue">
@@ -284,6 +293,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{ URL::asset('assets/js/demo.js') }}"></script>
     <!-- Page specific script -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $(function() {
             $("#example1").DataTable({
@@ -320,5 +330,7 @@
                 // "bDestroy": true
             });
         });
+
+
     </script>
 @endsection

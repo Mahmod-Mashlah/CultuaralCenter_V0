@@ -60,6 +60,6 @@
 <!-- ./wrapper -->
 
 @include('web.layouts.footer-scripts')
-
+@include('sweetalert::alert')
 </body>
 </html>
