@@ -14,58 +14,60 @@ class TypeLectureSeeder extends Seeder
     public function run(): void
     {
         // Types :
-                // Lecture Types :
-                     // cultural', 'educational', 'religious', 'social', 'economic', 'scientific', 'philosophical', 'technical', 'historical', 'political'
+        // Lecture Types :
+        // Cultural', 'Educational', 'Religious', 'Social', 'Economic', 'Scientific', 'Philosophical', 'Technical', 'Historical', 'Political'
 
         TypeLecture::factory()->create([
             'id' => '1',
-            'type' => 'cultural',
+            'type' => 'Cultural',
         ]);
 
-        \App\Models\TypeLecture::factory()->create([
+        TypeLecture::factory()->create([
             'id' => '2',
-            'type' => 'educational',
-               ]);
+            'type' => 'Economic',
+        ]);
 
-            \App\Models\TypeLecture::factory()->create([
-                'id' => '3',
-                'type' => 'religious',
-                   ]);
+        TypeLecture::factory()->create([
+            'id' => '3',
+            'type' => 'Educational',
 
-            \App\Models\TypeLecture::factory()->create([
-                'id' => '4',
-                'type' => 'social',
-                   ]);
+        ]);
 
-            \App\Models\TypeLecture::factory()->create([
-                'id' => '5',
-                'type' => 'economic',
-                   ]);
+        TypeLecture::factory()->create([
+            'id' => '4',
+            'type' => 'Historical',
+        ]);
 
-            \App\Models\TypeLecture::factory()->create([
-                'id' => '6',
-                'type' => 'scientific',
-                   ]);
+        TypeLecture::factory()->create([
+            'id' => '5',
+            'type' => 'Philosophical',
+        ]);
 
-            \App\Models\TypeLecture::factory()->create([
-                'id' => '7',
-                'type' => 'philosophical',
-                   ]);
+        TypeLecture::factory()->create([
+            'id' => '6',
+            'type' => 'Political',
+        ]);
 
-            \App\Models\TypeLecture::factory()->create([
-                'id' => '8',
-                'type' => 'technical',
-                   ]);
+        TypeLecture::factory()->create([
+            'id' => '7',
+            'type' => 'Religious',
 
-            \App\Models\TypeLecture::factory()->create([
-                'id' => '9',
-                'type' => 'historical',
-                   ]);
+        ]);
 
-            \App\Models\TypeLecture::factory()->create([
-                'id' => '10',
-                'type' => 'political',
-                   ]);
+        TypeLecture::factory()->create([
+            'id' => '8',
+            'type' => 'Scientific',
 
+        ]);
+
+        TypeLecture::factory()->create([
+            'id' => '9',
+            'type' => 'Social',
+        ]);
+
+        TypeLecture::factory()->create([
+            'id' => '10',
+            'type' => 'Technical',
+        ]);
     }
 }

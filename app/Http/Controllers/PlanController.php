@@ -21,10 +21,6 @@ class PlanController extends Controller
             'plans',
         ]));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $plans = Plan::all();
@@ -35,48 +31,105 @@ class PlanController extends Controller
         ]));
     }
 
-
     public function store(StorePlanRequest $request)
     {
-        //
-        // // Validate the input
-        // $validatedData = $request->validate([
-        //     'field1' => 'required',
-        //     'field2' => 'required',
-        //     // Add validation rules for other fields
-        // ]);
+        // Validate the form data
+        $validatedData = $request->validate([
 
-        // // Create a new record
-        // Plan::create($validatedData);
+            'date'           => 'required','date',
+            'start_time'     => 'required','time',
+            'end_time'       => 'required','time',
+            'min_lectures'   => 'required','min:3',
+            'max_lectures'   => 'required','max:100',
+            'min_activities' => 'required','min:2',
+            'max_activities' => 'required','max:150',
+            'min_plays'      => 'required','min:1',
+            'max_plays'      => 'required','max:60',
+            // Relations :
+            'lectures'       => 'array',
+            'plays'          => 'array',
+        ]);
 
-        $plan = new Plan();
-        // inputs :
+        // Create the plan
+        $plan = Plan::create([
 
-        $plan = Plan::create($request->all());
-        // Or :
-        // $plan->date = $request->input('date');
-        // $plan->start_time = $request->input('start_time');
-        // $plan->end_time = $request->input('end_time');
-        // $plan->min_lectures = $request->input('min_lectures');
-        // $plan->max_lectures = $request->input('max_lectures');
-        // $plan->min_activities = $request->input('min_activities');
-        // $plan->max_activities = $request->input('max_activities');
-        // $plan->min_plays = $request->input('min_plays');
-        // $plan->max_plays = $request->input('max_plays');
+            'date'           => $validatedData['date'],
+            'start_time'     => $validatedData['start_time'],
+            'end_time'       => $validatedData['end_time'],
+            'min_lectures'   => $validatedData['min_lectures'],
+            'max_lectures'   => $validatedData['max_lectures'],
+            'min_activities' => $validatedData['min_activities'],
+            'max_activities' => $validatedData['max_activities'],
+            'min_plays'      => $validatedData['min_plays'],
+            'max_plays'      => $validatedData['max_plays'],
+            // Relations :
+            'lectures'       => $validatedData['lectures'],
+            'plays'          => $validatedData['plays'],
+        ]);
 
-        //Relations :
-
-        // $plan->type_plays = $request->input('name');
-        // $plan->type_lectures = $request->input('name');
-
-        $plan->type_lectures()->attach($request->input('type_lectures'));
-        $plan->type_plays()->attach($request->input('type_plays'));
+        // Attach the selected lectures to the plan
+        $plan->type_lectures()->attach($validatedData['lectures']);
+        $plan->type_plays()->attach($validatedData['plays']);
 
         $plan->save();
         // Redirect or return a response
         Alert::success('Done !', 'a new plan has been created Successfully');
 
-        return redirect()->route('plans')->with('success', 'A new Plan has created successfully!');
+        return redirect()->route('plans',compact(['plan','validatedData']))->with('success', 'A new Plan has created successfully!');
+    }
+
+    public function test_store(StorePlanRequest $request)
+    {
+        // //
+        // // // Validate the input
+        // // $validatedData = $request->validate([
+        // //     'field1' => 'required',
+        // //     'field2' => 'required',
+        // //     // Add validation rules for other fields
+        // // ]);
+
+        // // // Create a new record
+        // // Plan::create($validatedData);
+
+        // $plan = new Plan();
+        // // inputs :
+
+        // $plan = Plan::create($request->all());
+        // $lecturesFromRequest = $request->input('lectures', []);
+        // foreach ($lecturesFromRequest as $lecture_Item) {
+        //     // Save $lectures to the database
+        //     // $lecture=TypeLecture::find($lecture->id);
+        //     // $lecture=$plan->type_lectures;
+        //     // $lecture=$lecture_Item;
+        //     // $plan->type_lectures = $lecture_Item;
+
+        //     // $lecture_Item->save();
+        // }
+
+        // // Or :
+        // // $plan->date = $request->input('date');
+        // // $plan->start_time = $request->input('start_time');
+        // // $plan->end_time = $request->input('end_time');
+        // // $plan->min_lectures = $request->input('min_lectures');
+        // // $plan->max_lectures = $request->input('max_lectures');
+        // // $plan->min_activities = $request->input('min_activities');
+        // // $plan->max_activities = $request->input('max_activities');
+        // // $plan->min_plays = $request->input('min_plays');
+        // // $plan->max_plays = $request->input('max_plays');
+
+        // //Relations :
+
+        // // $plan->type_plays = $request->input('name');
+        // // $plan->type_lectures = $request->input('name');
+
+        // $plan->type_lectures()->attach($request->input('type_lectures'));
+        // $plan->type_plays()->attach($request->input('type_plays'));
+
+        // $plan->save();
+        // // Redirect or return a response
+        // Alert::success('Done !', 'a new plan has been created Successfully');
+
+        // return redirect()->route('plans')->with('success', 'A new Plan has created successfully!');
     }
 
     public function edit(Plan $plan)

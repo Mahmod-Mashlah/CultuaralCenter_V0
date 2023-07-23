@@ -221,7 +221,7 @@
 
                                     <td class='text-center' style="font-size: 23px;"><span
                                         class="badge text-olive disabled color-palette">
-                                        @foreach ($plan->type_lectures->unique('type') as $lecture)
+                                        @foreach ($plan->type_lectures->unique('type')->sortBy('type') as $lecture)
                                             {{ $lecture->type }},
                                         @endforeach
                                     </span></td>

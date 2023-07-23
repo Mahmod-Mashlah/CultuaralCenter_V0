@@ -18,32 +18,32 @@ class TypePlaySeeder extends Seeder
 
             TypePlay::factory()->create([
             'id' => '1',
-            'type' => 'Pantomime',
+            'type' => 'Drama',
         ]);
 
         TypePlay::factory()->create([
             'id' => '2',
-            'type' => 'Fantasy',
+            'type' => 'Epic',
                 ]);
 
             TypePlay::factory()->create([
                 'id' => '3',
-                'type' => 'Musical',
+                'type' => 'Fantasy',
                     ]);
 
             TypePlay::factory()->create([
                 'id' => '4',
-                'type' => 'Epic',
+                'type' => 'Modern',
                     ]);
 
             TypePlay::factory()->create([
                 'id' => '5',
-                'type' => 'Drama',
+                'type' => 'Musical',
                     ]);
 
             TypePlay::factory()->create([
                 'id' => '6',
-                'type' => 'Social',
+                'type' => 'Pantomime',
                     ]);
 
             TypePlay::factory()->create([
@@ -53,7 +53,7 @@ class TypePlaySeeder extends Seeder
 
             TypePlay::factory()->create([
                 'id' => '8',
-                'type' => 'Modern',
+                'type' => 'Social',
                     ]);
     }
 }
