@@ -50,7 +50,13 @@ class PlanController extends Controller
             'plays'          => 'array',
         ]);
 
+        // $plan = new Plan();
+        // if ($plan->plays == [] || $plan->lecturess == [] ) {
+        //     Alert::warning('warning !', 'You should select at least one play type and one lecture type');
+        // }
+
         // Create the plan
+
         $plan = Plan::create([
 
             'date'           => $validatedData['date'],
@@ -66,6 +72,7 @@ class PlanController extends Controller
             'lectures'       => $validatedData['lectures'],
             'plays'          => $validatedData['plays'],
         ]);
+
 
         // Attach the selected lectures to the plan
         $plan->type_lectures()->attach($validatedData['lectures']);

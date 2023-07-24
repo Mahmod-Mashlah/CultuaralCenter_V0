@@ -70,7 +70,7 @@
 
                                     <div class="form-group cs-form">
                                         <label for="start_time"> The Center opens at :</label>
-                                        <input type="time" id="start_time" name="start_time"
+                                        <input type="time" id="start_time" name="start_time" value="{{ old('start_time', '08:00') }}"
                                             class="form-control bg- light" required />
                                     </div>
 
@@ -78,7 +78,7 @@
 
                                     <div class="form-group">
                                         <label for="end_time">The Center close at :</label>
-                                        <input type="time" id="end_time" name="end_time" class="form-control bg- light"
+                                        <input type="time" id="end_time" name="end_time" class="form-control bg- light" value="{{ old('start_time', '16:00') }}"
                                             required />
                                     </div>
                                     {{-- <div class="row d-flex">
@@ -105,7 +105,7 @@
                                         <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60"
                                             id="min_lectures" name="min_lectures">
                                             @for ($i = 3; $i <= 100; $i++)
-                                                <option>{{ $i }}</option>
+                                                <option value="{{ $i }}" {{ $i == 3 ? 'selected' : '' }}>{{ $i }}</option>
                                             @endfor
                                         </select>
                                     </div>
@@ -113,7 +113,7 @@
                                     {{-- ____________________________________________________________________ --}}
 
                                     <div class="form-group">
-                                        <label for="lectures">Minimum Lectures Available types :</label>
+                                        <label for="lectures">Minimum Lectures Available types : <sub> ( select at least one type ) </sub> </label>
                                         <br>
 
                                         @foreach ($lectures->sortBy('type') as $lecture)
@@ -234,11 +234,12 @@
                                             <br>
 
                                             <select class="selectpicker col-md-12 bg-light" placeholder="2 to 60"
-                                                id="max_lectures" name="max_lectures">
+                                                id="max_lectures" name="max_lectures" >
                                                 @for ($i = 3; $i <= 100; $i++)
-                                                    <option>{{ $i }}</option>
+                                                    <option value="{{ $i }}" {{ $i == 100 ? 'selected' : '' }}>{{ $i }}</option>
                                                 @endfor
                                             </select>
+
                                         </div>
 
                                         {{-- <div class="row d-flex">
@@ -271,7 +272,8 @@
                                             <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60"
                                                 id="min_activities" name="min_activities">
                                                 @for ($i = 2; $i <= 150; $i++)
-                                                    <option id="min_activities" name="min_activities">{{ $i }}
+                                                    <option id="min_activities" name="min_activities"
+                                                    value="{{ $i }}" {{ $i == 2 ? 'selected' : '' }}>{{ $i }}
                                                     </option>
                                                 @endfor
                                             </select>
@@ -290,7 +292,7 @@
                                             <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60"
                                                 id="max_activities" name="max_activities">
                                                 @for ($i = 2; $i <= 150; $i++)
-                                                    <option>{{ $i }}</option>
+                                                    <option value="{{ $i }}" {{ $i == 150 ? 'selected' : '' }}>{{ $i }}</option>
                                                 @endfor
                                             </select>
                                         </div>
@@ -319,16 +321,16 @@
                                             <select class="selectpicker col-md-12 bg- light" placeholder="2 to 60"
                                                 id="min_plays" name="min_plays">
                                                 @for ($i = 1; $i <= 30; $i++)
-                                                    <option>{{ $i }}</option>
+                                                    <option value="{{ $i }}" {{ $i == 2 ? 'selected' : '' }}>{{ $i }}</option>
                                                 @endfor
                                             </select>
                                         </div>
 
                                         <div class="form-group">
                                             {{-- ____________________________________________________________________ --}}
-                                            <label for="plays">Minimum Plays Available types :</label>
-                                            <br>
+                                            <label for="plays">Minimum Plays Available types : <sub> ( select at least one type ) </sub> </label>
 
+                                            <br>
                                             @foreach ($plays->sortBy('type') as $play)
                                                 <input type="checkbox" name="plays[]" value="{{ $play->id }}">
                                                 {{ $play->type }}
@@ -395,7 +397,7 @@
                                             <select class="selectpicker col-md-12 bg- light" placeholder="60"
                                                 default='60' id="max_plays" name="max_plays">
                                                 @for ($i = 1; $i <= 60; $i++)
-                                                    <option>{{ $i }}</option>
+                                                    <option value="{{ $i }}" {{ $i == 60 ? 'selected' : '' }}>{{ $i }}</option>
                                                 @endfor
                                             </select>
                                         </div>
