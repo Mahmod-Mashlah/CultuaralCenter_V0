@@ -25,7 +25,7 @@ class UpdateBookRequest extends FormRequest
             'name' => ['required','string','max:255',],
             'author' => ['required','string','max:255',],
             'amount' => ['required','integer','max:100','min:0'],
-            'type' => ['required','string','max:255',],
+            'type' => ['required','string','max:255','exists:departments,name'],
             'row' => ['required','string','max:255'],
 
             //relations :

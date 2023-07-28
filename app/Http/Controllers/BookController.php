@@ -93,12 +93,6 @@ class BookController extends Controller
     public function update(UpdateBookRequest $request, Book $book)
     {
         $book=Book::find($book->id);
-        if (Auth::user()->id !== $book->user_id) {
-            return $this->error('','You are not Authorized to make this request',403);
-
-
-
-        }
 
         $book->update($request->all());
         $book->save();
