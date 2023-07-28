@@ -61,10 +61,14 @@
 
                                         {{-- // <label for="email">Email:</label>
                                     // <input type="email" name="email" id="email" required><br> --}}
-
+                                        {{ $errors }}
                                         <label for="date">Start Date :</label>
                                         <input id="date" class="form-control bg- light" type="date" name="date"
                                             required />
+                                            {{-- Validation message --}}
+                                            @error('date')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
                                     </div>
 
 
@@ -72,6 +76,7 @@
                                         <label for="start_time"> The Center opens at :</label>
                                         <input type="time" id="start_time" name="start_time" value="{{ old('start_time', '08:00') }}"
                                             class="form-control bg- light" required />
+
                                     </div>
 
 

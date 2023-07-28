@@ -36,15 +36,15 @@ class PlanController extends Controller
         // Validate the form data
         $validatedData = $request->validate([
 
-            'date'           => 'required','date',
-            'start_time'     => 'required','time',
-            'end_time'       => 'required','time',
-            'min_lectures'   => 'required','min:3',
-            'max_lectures'   => 'required','max:100',
-            'min_activities' => 'required','min:2',
-            'max_activities' => 'required','max:150',
-            'min_plays'      => 'required','min:1',
-            'max_plays'      => 'required','max:60',
+            'date'           => 'required | date | after_or_equal:2024-01-01', // or ['required'],['date'],
+            'start_time'     => 'required | time',
+            'end_time'       => 'required | time',
+            'min_lectures'   => 'required | min:3',
+            'max_lectures'   => 'required | max:100',
+            'min_activities' => 'required | min:2',
+            'max_activities' => 'required | max:150',
+            'min_plays'      => 'required | min:1',
+            'max_plays'      => 'required | max:60',
             // Relations :
             'lectures'       => 'array',
             'plays'          => 'array',
@@ -82,7 +82,7 @@ class PlanController extends Controller
         // Redirect or return a response
         Alert::success('Done !', 'a new plan has been created Successfully');
 
-        return redirect()->route('plans',compact(['plan','validatedData']))->with('success', 'A new Plan has created successfully!');
+        return redirect()->route('plans.add',compact(['plan','validatedData']))->with('success', 'A new Plan has created successfully!');
     }
 
     public function test_store(StorePlanRequest $request)

@@ -202,11 +202,11 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 1%"><b>#</b></th>
-                                        <th style="width: 19%" class='text-center'>Start Date </th>
+                                        <th style="width: 11%" class='text-center'>Start Date </th>
                                         {{-- <th style="width: 10%" >Edit Plan </th> --}}
 
-                                        <th class='text-center' style="width: 40%">Minimum Available Lecturess Types</th>
-                                        <th class='text-center' style="width: 40%">Minimum Available Plays Types</th>
+                                        <th class='text-center' style="width: 44%">Minimum Available Lecturess Types</th>
+                                        <th class='text-center' style="width: 44%">Minimum Available Plays Types</th>
                                     </tr>
                                 </thead>
                                 <tbody>
