@@ -62,7 +62,8 @@ class BookController extends Controller
 
         $request -> validated($request->all() );
 
-        $department = Department::find('department_id');
+        // For relation :
+        // $department = Department::find('department_id');
 
 
         $book = Book::create([
@@ -72,7 +73,7 @@ class BookController extends Controller
             'amount' => $request->amount,
             'type' => $request->type,
             'row' => $request->row,
-            'department_id' => $department->id,
+            // 'department_id' => $department->id,
 
             //relations :
 

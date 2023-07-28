@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('row'); // الرف
 
             // Relations :
-            $table->foreignIdFor(Department::class,'department_id');
+            // $table->foreignIdFor(Department::class,'department_id');
             // $table->unsignedBigInteger('department_id');
             // $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
 
