@@ -13,7 +13,7 @@ class DepartmentSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i=1; $i <= 10 ; $i++) {
+        for ($i=1; $i <= 20 ; $i++) {
             Department::factory()->create([
 
                 'name' => "Department#"."$i",

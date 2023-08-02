@@ -43,13 +43,13 @@ Route::middleware('web-auth')->group(function () {
             Route::get('/web/plans/add', [PlanController::class, 'create'])->name('plans.add');
             Route::post('/web/plans/add', [PlanController::class, 'store'])->name('plans.store');
 
-
             // update Plan :
-            Route::get('/web/plans/update', function () {
-                return view('web.plans.update');
-            })->name('plans-update');
+            Route::get('/web/plans/update', [PlanController::class, 'edit'])->name('plans.edit');
+            // Route::post('/web/plans/update', [PlanController::class, 'update'])->name('plans.update');
+            Route::put('/web/plans/update/{id}', [PlanController::class, 'update'])->name('plans.update');
 
-            // Employees :
+        // Employees :
+
             // index :
             Route::get('/web/employees', function () {
                 return view('web.employees.index');

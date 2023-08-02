@@ -139,14 +139,42 @@ class PlanController extends Controller
         // return redirect()->route('plans')->with('success', 'A new Plan has created successfully!');
     }
 
-    public function edit(Plan $plan)
+    public function edit($id)
     {
-        //
+        $plan = Plan::find($id);
+        return view('web.plans.update', compact('plan'));
     }
 
-    public function update(UpdatePlanRequest $request, Plan $plan)
+    public function update(UpdatePlanRequest $request, $id)
     {
-        //
+        $plan = Plan::findOrFail($id) ;
+
+        $validated = $request->validate([
+            'date'           => 'required | date | after_or_equal:2024-01-01', // or ['required'],['date'],
+            'start_time'     => 'required | time',
+            'end_time'       => 'required | time',
+            'min_lectures'   => 'required | min:3',
+            'max_lectures'   => 'required | max:100',
+            'min_activities' => 'required | min:2',
+            'max_activities' => 'required | max:150',
+            'min_plays'      => 'required | min:1',
+            'max_plays'      => 'required | max:60',
+            // Relations :
+            'lectures'       => 'array',
+            'plays'          => 'array',
+        ]);
+        //dd($validated);
+        $plan->update($validated);
+        // or :
+            // $plan->update([
+            //     'name' => $request->input('name'),  //.... and so on
+            // ]);
+
+        $plan->save();
+        if ($plan->save()) {
+            Alert::success('Done !', 'a new plan has been updated Successfully');
+        }
+        return redirect()->route('plans')->with('success', 'Plan has been updated successfully!');
     }
 
 }

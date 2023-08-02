@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TypePlaySeeder::class);
         // Department Seeder :
         $this->call(DepartmentSeeder::class);
+        $this->call(BookSeeder::class);
         // Plan Seeder :
         // $this->call(PlanSeeder::class);
 
