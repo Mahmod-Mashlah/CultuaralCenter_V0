@@ -54,14 +54,14 @@
 
                             <form method="Post" action="/web/plans/add">
                                 @csrf
-
+                                @method('Post')
                                 <div class="card-body">
 
                                     <div class="form-group">
 
                                         {{-- // <label for="email">Email:</label>
                                     // <input type="email" name="email" id="email" required><br> --}}
-                                        {{ $errors }}
+                                        {{-- {{ $errors }} --}}
                                         <label for="date">Start Date :</label>
                                         <input id="date" class="form-control bg- light" type="date" name="date"
                                             required />

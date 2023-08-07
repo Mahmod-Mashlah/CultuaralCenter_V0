@@ -44,9 +44,11 @@ Route::middleware('web-auth')->group(function () {
             Route::post('/web/plans/add', [PlanController::class, 'store'])->name('plans.store');
 
             // update Plan :
-            Route::get('/web/plans/update', [PlanController::class, 'edit'])->name('plans.edit');
+            // Route::get('/web/plans/update', [PlanController::class, 'edit'])->name('plans.edit');
             // Route::post('/web/plans/update', [PlanController::class, 'update'])->name('plans.update');
-            Route::put('/web/plans/update/{id}', [PlanController::class, 'update'])->name('plans.update');
+            // Route::put('/web/plans/update/{id}', [PlanController::class, 'update'])->name('plans.update');
+            Route::get('/web/plans/{plan}/edit', [PlanController::class, 'edit'])->name('plans.edit');
+            Route::put('/web/plans/{plan}', [PlanController::class, 'update'])->name('plans.update');
 
         // Employees :
 

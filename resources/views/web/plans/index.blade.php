@@ -215,8 +215,26 @@
                                 @foreach ($plans as $plan)
                                     <tr>
                                     <td> <b> {{ $plan->id }} </b></td>
-                                    <td style="font-size: 20px;" class='text-center'> <i>
-                                    {{ Carbon\Carbon::parse($plan->date)->format('j/n/Y') }}
+                                    <td style="font-size: 23px;" class='text-center'> <i>
+                                    {{ Carbon\Carbon::parse($plan->date)->format('j/n/Y') }} {{-- ->format('J/n/Y') --}}
+
+                                    <br>
+
+                                {{-- @if ($plan->date->isFirstOfMonth()) --}}
+                                @php
+                                    $now = new DateTime();  // Current date and time
+                                    $futureDate = new DateTime();  // Create a new DateTime object
+                                    $futureDate->modify('+1 month');  // Add 1 month to the current date
+                                    // Get the first day of the next month from now
+
+                                    $now = new DateTime(); // Get the current date
+                                    $firstDayNextMonth = new DateTime('first day of next month'); // first day of next month
+
+                                @endphp
+                                        @if (Carbon\Carbon::parse($plan->date) > Carbon\Carbon::parse($firstDayNextMonth) ) {{-- ->isAfter($futureDate) --}}
+                                        <a href="/web/plans/{{ $plan->id }}/edit" class="btn btn-primary" type="button">Edit</a>
+                                        @endif
+                                {{-- @endif --}}
                                     </i></td>
 
                                     <td class='text-center' style="font-size: 23px;"><span

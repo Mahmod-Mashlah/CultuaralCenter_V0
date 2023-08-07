@@ -33,30 +33,57 @@ class PlanController extends Controller
 
     public function store(StorePlanRequest $request)
     {
+        //
+        // // Validate the input
+        // $validatedData = $request->validate([
+        //     'field1' => 'required',
+        //     'field2' => 'required',
+        //     // Add validation rules for other fields
+        // ]);
+
+        // // Create a new record
+        // Plan::create($validatedData);
+
+        $plan = new Plan();
+        // inputs :
+
+        // $plan = Plan::create($request->all());
+        // Or :
+        // $plan->date = $request->input('date');
+        // $plan->start_time = $request->input('start_time');
+        // $plan->end_time = $request->input('end_time');
+        // $plan->min_lectures = $request->input('min_lectures');
+        // $plan->max_lectures = $request->input('max_lectures');
+        // $plan->min_activities = $request->input('min_activities');
+        // $plan->max_activities = $request->input('max_activities');
+        // $plan->min_plays = $request->input('min_plays');
+        // $plan->max_plays = $request->input('max_plays');
+
+        //Relations :
+
+        // $plan->type_plays = $request->input('name');
+        // $plan->type_lectures = $request->input('name');
+
+        // $plan->type_lectures()->attach($request->input('type_lectures'));
+        // $plan->type_plays()->attach($request->input('type_plays'));
         // Validate the form data
         $validatedData = $request->validate([
 
-            'date'           => 'required | date | after_or_equal:2024-01-01', // or ['required'],['date'],
-            'start_time'     => 'required | time',
-            'end_time'       => 'required | time',
-            'min_lectures'   => 'required | min:3',
-            'max_lectures'   => 'required | max:100',
-            'min_activities' => 'required | min:2',
-            'max_activities' => 'required | max:150',
-            'min_plays'      => 'required | min:1',
-            'max_plays'      => 'required | max:60',
+            'date'           => 'required','date',
+            'start_time'     => 'required','time',
+            'end_time'       => 'required','time',
+            'min_lectures'   => 'required','min:3',
+            'max_lectures'   => 'required','max:100',
+            'min_activities' => 'required','min:2',
+            'max_activities' => 'required','max:150',
+            'min_plays'      => 'required','min:1',
+            'max_plays'      => 'required','max:60',
             // Relations :
             'lectures'       => 'array',
             'plays'          => 'array',
         ]);
 
-        // $plan = new Plan();
-        // if ($plan->plays == [] || $plan->lecturess == [] ) {
-        //     Alert::warning('warning !', 'You should select at least one play type and one lecture type');
-        // }
-
         // Create the plan
-
         $plan = Plan::create([
 
             'date'           => $validatedData['date'],
@@ -73,7 +100,6 @@ class PlanController extends Controller
             'plays'          => $validatedData['plays'],
         ]);
 
-
         // Attach the selected lectures to the plan
         $plan->type_lectures()->attach($validatedData['lectures']);
         $plan->type_plays()->attach($validatedData['plays']);
@@ -82,7 +108,8 @@ class PlanController extends Controller
         // Redirect or return a response
         Alert::success('Done !', 'a new plan has been created Successfully');
 
-        return redirect()->route('plans.add',compact(['plan','validatedData']))->with('success', 'A new Plan has created successfully!');
+        // return redirect()->route('plans')->with('success', 'A new Plan has created successfully!');
+        return redirect()->route('plans',compact(['plan','validatedData']))->with('success', 'A new Plan has created successfully!');
     }
 
     public function test_store(StorePlanRequest $request)
@@ -139,32 +166,34 @@ class PlanController extends Controller
         // return redirect()->route('plans')->with('success', 'A new Plan has created successfully!');
     }
 
-    public function edit($id)
+    public function edit(Plan $plan)
     {
-        $plan = Plan::find($id);
-        return view('web.plans.update', compact('plan'));
+        $plan = Plan::find($plan->id);
+        $lectures = TypeLecture::all();
+        $plays = TypePlay::all();
+        return view('web.plans.update', compact('plan','lectures','plays'));
     }
 
-    public function update(UpdatePlanRequest $request, $id)
+    public function updateTest(UpdatePlanRequest $request, $id)
     {
         $plan = Plan::findOrFail($id) ;
 
-        $validated = $request->validate([
-            'date'           => 'required | date | after_or_equal:2024-01-01', // or ['required'],['date'],
-            'start_time'     => 'required | time',
-            'end_time'       => 'required | time',
-            'min_lectures'   => 'required | min:3',
-            'max_lectures'   => 'required | max:100',
-            'min_activities' => 'required | min:2',
-            'max_activities' => 'required | max:150',
-            'min_plays'      => 'required | min:1',
-            'max_plays'      => 'required | max:60',
-            // Relations :
-            'lectures'       => 'array',
-            'plays'          => 'array',
-        ]);
+        // $validated = $request->validate([
+        //     'date'           => 'required | date | after_or_equal:2024-01-01', // or ['required'],['date'],
+        //     'start_time'     => 'required | time',
+        //     'end_time'       => 'required | time',
+        //     'min_lectures'   => 'required | min:3',
+        //     'max_lectures'   => 'required | max:100',
+        //     'min_activities' => 'required | min:2',
+        //     'max_activities' => 'required | max:150',
+        //     'min_plays'      => 'required | min:1',
+        //     'max_plays'      => 'required | max:60',
+        //     // Relations :
+        //     'lectures'       => 'array',
+        //     'plays'          => 'array',
+        // ]);
         //dd($validated);
-        $plan->update($validated);
+        // $plan->update($validated);
         // or :
             // $plan->update([
             //     'name' => $request->input('name'),  //.... and so on
@@ -176,5 +205,17 @@ class PlanController extends Controller
         }
         return redirect()->route('plans')->with('success', 'Plan has been updated successfully!');
     }
+
+    public function update(UpdatePlanRequest $request, Plan $plan)
+{
+    $plan->type_lectures()->sync($request->input('lectures'));
+    $plan->type_plays()->sync($request->input('plays'));
+    $plan->update($request->all());
+
+    $plan->save();
+
+    Alert::success('Updated Done !', 'The Plan has been updated Successfully');
+    return redirect()->route('plans')->with('success', 'Plan has updated successfully.');
+}
 
 }
