@@ -70,104 +70,80 @@
                                 </thead>
                                 <tbody>
 
-                                    <tr>
+                        {{-- /////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
+
+                            @foreach ($employees as $employee)
+                                <tr>
+                                <td> <b> {{ $employee->id }} </b></td>
+
+                                <td class='text-center' style="font-size: 23px;"><span
+                                    class="badge text-black disabled color-palette">{{ $employee->name }}</span></td>
+                                    <td class='text-center' style="font-size: 23px;"><span
+                                        class="badge text-dark  disabled color-palette ">
+                                        {{-- <a href={{ url( $employee->email , []) }} target="_plank"></a> --}}
+                                        {{ $employee->email }}</span></td>
+                                        <td class='text-center' style="font-size: 23px;">
+                                            <span
+                                            @if ($employee->type == 'user')
+                                            class="badge bg-orange disabled color-palette">userTesting
+                                            @endif
+                                            {{-- @if ($employee->type == 'Theatre')
+                                            class="badge bg-orange disabled color-palette">
+                                            @endif
+                                            @if ($employee->type == 'Library')
+                                            class="badge bg-orange disabled color-palette">
+                                            @endif
+                                            @if ($employee->type == 'Activity')
+                                            class="badge bg-orange disabled color-palette">
+                                            @endif
+                                            {{ $employee->type }}
+                                            </span></td> --}}
+                                </tr>
+                             @endforeach
+
+                        {{-- /////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
+                                    {{-- <tr>
                                         <td><b>1</b></td>
 
                                         <td class='text-center' style="font-size: 20px;"><i> Majd
                                             </i></td>
-                                        {{-- <td class='text-center' style="font-size: 18px;">
-                        <button type="button" class="btn btn-primary btn-block"> Edit</button>
-                        </td> --}}
+
                                         <td class='text-center' style="font-size: 18px;">majd@gmail.com</td>
 
                                         <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-yellow disabled color-palette">5</span></td>
-                                        {{-- <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">23</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">7</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">29</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">6</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">19</span></td> --}}
                                     </tr>
                                     <tr>
                                         <td><b>2</b></td>
                                         <td class='text-center' style="font-size: 20px;"><i> Raghad </i></td>
-                                        {{-- <td class='text-center' style="font-size: 18px;">
-                            <button type="button" class="btn btn-primary btn-block"> Edit</button>
-                            </td> --}}
+
                                         <td class='text-center' style="font-size: 18px;">raghad@gmail.com</td>
 
                                         <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-teal disabled color-palette">30</span></td>
-                                        {{-- <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">67</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">70</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">90</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">43</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">100</span></td> --}}
-                                    </tr>
+                                          </tr>
                                     <tr>
                                         <td><b>3</b></td>
                                         <td class='text-center' style="font-size: 20px;"><i> Ruba </i></td>
-                                        {{-- <td class='text-center' style="font-size: 18px;">
-                            <button type="button" class="btn btn-primary btn-block"> Edit</button>
-                            </td> --}}
+
                                         <td class='text-center' style="font-size: 18px;">ruba@gmail.com</td>
 
                                         <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-orange disabled color-palette">32</span></td>
-                                        {{-- <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">46</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">12</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">23</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">29</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">44</span></td> --}}
                                     </tr>
 
                                     <tr>
                                         <td><b>4</b></td>
                                         <td class='text-center' style="font-size: 20px;"><i> Jaafar </i></td>
-                                        {{-- <td class='text-center' style="font-size: 18px;">
-                            <button type="button" class="btn btn-primary btn-block"> Edit</button>
-                            </td> --}}
+
                                         <td class='text-center' style="font-size: 18px;">jaafar@gmail.com</td>
 
                                         <td class='text-center' style="font-size: 20px;"><span
                                                 class="badge bg-pink disabled color-palette">16</span></td>
-                                        {{-- <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">23</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">53</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">73</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-teal disabled color-palette">63</span></td>
-                                        <td class='text-center' style="font-size: 20px;"><span
-                                                class="badge bg-warning disabled color-palette">67</span></td> --}}
-                                    </tr>
+                                         </tr> --}}
 
                                 </tbody>
-                                {{-- <tbody>
-                        @foreach ($users as $user)
-                        <tr>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <!-- Add more table cells with user data if needed -->
-                        </tr>
-                        @endforeach
-                    </tbody> --}}
+
                                 <tfoot>
                                     {{-- <tr>
                             <th style="width: 1%"><b> #</b></th>

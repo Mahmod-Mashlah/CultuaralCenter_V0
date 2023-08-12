@@ -63,8 +63,8 @@ Employees || Add New Employee
 
                       </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Name</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                      <label for="exampleInputPassword1">User Account Identity </label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="id">
                     </div>
 
                     <div class="form-group">
@@ -72,12 +72,12 @@ Employees || Add New Employee
                       <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                     </div>
 
-                    <div class="row d-flex">
+                    {{-- <div class="row d-flex">
                     <div class="col"><hr color="orange"></div>
                     <div class="col"><hr color="orange"></div>
-                    </div>
+                    </div> --}}
                     {{--  --}}
-                    <br>
+
                    <div class="form-group">
                        <label for="exampleSelectBorder">Type  :
                        </label>
@@ -92,10 +92,10 @@ Employees || Add New Employee
                          </select>
                      </div>
 
-                        <br>
-
-
-
+                        <div class="row d-flex">
+                            <div class="col"><hr color="orange"></div>
+                            <div class="col"><hr color="orange"></div>
+                            </div>
                   </div>
                   <!-- /.card-body -->
 

@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
        for ($i=1; $i <= 10 ; $i++) {
         \App\Models\User::factory()->create([
             'name' => 'a'."$i",
+            'type' => 'user',
             'email' => 'a'."$i".'@gmail.com',
             'password' => Hash::make('password'),
         ]);
@@ -36,6 +37,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name' => 'a',
             'email' => 'a@gmail.com',
+            'type' => 'admin',
             'password' => Hash::make('password'),
         ]);
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -50,17 +51,14 @@ Route::middleware('web-auth')->group(function () {
             Route::get('/web/plans/{plan}/edit', [PlanController::class, 'edit'])->name('plans.edit');
             Route::put('/web/plans/{plan}', [PlanController::class, 'update'])->name('plans.update');
 
-        // Employees :
+            // Employees :
 
             // index :
-            Route::get('/web/employees', function () {
-                return view('web.employees.index');
-            })->name('employees');
+            Route::get('/web/employees', [EmployeeController::class, 'index'])->name('employees');
+
             // add Employee :
-            Route::get('/web/employees/add', function () {
-                return view('web.employees.add');
-            })->name('employees-add');
-        });
+            Route::get('/web/employees/add', [EmployeeController::class, 'create'])->name('employees-add');
+            Route::post('/web/employees/add', [EmployeeController::class, 'store'])->name('employees-store');
 
     // End Private Routes
 
