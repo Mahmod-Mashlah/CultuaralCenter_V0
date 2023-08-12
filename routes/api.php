@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\DepartmentController;
-
+use App\Http\Controllers\RatingController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -33,6 +33,10 @@ Route::group(['middleware'=>['auth:sanctum']],function () {
     Route::resource('/books', BookController::class)->except(['index','show']);
     Route::resource('/departments', DepartmentController::class)->except(['index','show']);
     Route::post('/logout', [AuthController::class,'logout']);
+
+    // Rating :
+    Route::post('/ratings', [RatingController::class, 'store'])->name('ratings.store');
+    Route::put('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
 
  });
 
