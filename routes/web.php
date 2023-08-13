@@ -30,7 +30,8 @@ Route::post('/login', [WebLoginController::class, 'processLogin'])->name('login'
 
 // Private Routes :
 
-Route::middleware('web-auth')->group(function () {
+Route::middleware('web-auth')->group(function ()
+{
 
         // Dashboard data & info & welcome View  :
             Route::get('/',[WelcomeController::class, 'dashboard'] )->name('dashboard');
@@ -63,6 +64,7 @@ Route::middleware('web-auth')->group(function () {
     // End Private Routes
 
     // edit Permissions :
-Route::get('/web/employees/edit-permissions', function () {
-    return view('web.employees.edit-permissions');
-})->name('employees-edit-permissions');
+    Route::get('/web/employees/edit-permissions', function () {
+        return view('web.employees.edit-permissions');
+    })->name('employees-edit-permissions');
+});
