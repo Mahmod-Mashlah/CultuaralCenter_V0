@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\User;
+use App\Models\Rating;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class WelcomeController extends Controller
 {
@@ -19,16 +21,28 @@ class WelcomeController extends Controller
         // $lectures_and_plays_Count = Lecture::count() + Play::count() ;
 
     // Rating :
-    //    $rated_users_count = User::where('evaluate', '=', User::get('evaluate'))->exists()->count();
-    //    $rating_sum = User::where('evaluate', '=', User::get('evaluate')->sum('evaluate'));
 
-    //    $rating = $rating_sum / $rated_users_count ;
+    $sum = DB::table('ratings')
+    ->where('rating', '>=', 1)
+        ->where('rating', '<=', 5)
+            ->sum('rating');
+
+    $count = DB::table('ratings')
+    ->where('rating', '>=', 1)
+        ->where('rating', '<=', 5)
+            ->count('rating');
+
+    $result = $sum / $count ;
+
+
+    $ratingPercent = round( $result /5 * 100 , 1);
 
         return view('web.welcome', compact([
             'userCount',
             'booksCount',
             // 'lectures_and_plays_Count',
-            // 'rating'
+
+             'ratingPercent',
         ]));
     }
 }

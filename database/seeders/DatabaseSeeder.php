@@ -1,6 +1,9 @@
 <?php
 
 namespace Database\Seeders;
+
+use App\Models\Rating;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -40,5 +43,14 @@ class DatabaseSeeder extends Seeder
             'type' => 'admin',
             'password' => Hash::make('password'),
         ]);
+
+        $usersCount = User::all()->count() ;
+        for ($i=1; $i <=  $usersCount; $i++) {
+        Rating::factory()->create([
+            'user_id'=> $i,
+            'rating' =>  rand(1, 5)  ,
+        ]);
+         }
+
     }
 }

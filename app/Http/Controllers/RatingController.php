@@ -33,4 +33,11 @@ class RatingController extends Controller
            return response()->json(['message' => 'Rating updated successfully', 'rating' => $rating],200);
        }
 
+    //    function index() {
+
+    //    }
+    //    function Calculate all Ratings() {
+
+    //    }
+
 }

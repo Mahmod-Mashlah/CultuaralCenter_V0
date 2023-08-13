@@ -66,6 +66,7 @@
                         <div class="inner">
                             <h3 class="text-white">
                                  {{ $userCount }}
+
                                 </h3>
 
                             <p class="text-white">Users</p>
@@ -81,7 +82,8 @@
                     <div class="small-box bg-primary">
                         <div class="inner">
                             <h3 class="text-white">
-                               99 {{-- {{ $rating }} --}}
+                                {{-- {{ $sum }} --}}
+                                {{ $ratingPercent }}
                                 <sup style="font-size: 20px">%</sup></h3>
 
                             <p class="text-white">Rating</p>

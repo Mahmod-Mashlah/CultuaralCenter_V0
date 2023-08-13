@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
            $table->unsignedBigInteger('user_id');
-           $table->unsignedTinyInteger('rating')->default(3);
+           $table->unsignedTinyInteger('rating')->default(null);
            $table->timestamps();
 
            $table->foreign('user_id')->references('id')->on('users');

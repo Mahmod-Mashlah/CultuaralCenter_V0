@@ -51,6 +51,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function rating()
+       {
+           return $this->hasOne(Rating::class);
+       }
+
     /**
      * The accessors to append to the model's array form.
      *
