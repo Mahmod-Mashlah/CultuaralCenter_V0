@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BookReservationController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\RatingController;
 
@@ -37,6 +38,10 @@ Route::group(['middleware'=>['auth:sanctum']],function () {
     // Rating :
     Route::post('/ratings', [RatingController::class, 'store'])->name('ratings.store');
     Route::put('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
+
+    // Book Reservations :
+
+    Route::resource('/book-reservations', BookReservationController::class)->only(['index','store']);;
 
  });
 

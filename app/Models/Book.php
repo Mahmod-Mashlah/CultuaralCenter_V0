@@ -26,5 +26,10 @@ class Book extends Model
     {
         return $this->belongsTo(Department::class) ;
     }
+
+    public function userReservations()
+    {
+        return $this->belongsToMany(User::class, 'reservations');
+    }
 }
 

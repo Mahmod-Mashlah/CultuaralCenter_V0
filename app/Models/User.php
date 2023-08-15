@@ -56,6 +56,11 @@ class User extends Authenticatable
            return $this->hasOne(Rating::class);
        }
 
+    public function bookReservations()
+    {
+        return $this->belongsToMany(Book::class, 'book_reservations');
+    }
+
     /**
      * The accessors to append to the model's array form.
      *

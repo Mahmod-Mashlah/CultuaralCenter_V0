@@ -4,18 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Rating;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RatingController extends Controller
 {
     public function store(Request $request)
     {
         $request->validate([
-            'user_id' => 'required|exists:users,id',
+            // 'user_id' => 'required|exists:users,id',
             'rating' => 'required|integer|min:1|max:5'
         ]);
 
         $rating = Rating::updateOrCreate(
-            ['user_id' => $request->user_id,],
+            ['user_id'   => Auth::user()->id ,],
             ['rating' => $request->rating]
         );
 
