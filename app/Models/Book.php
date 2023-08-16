@@ -31,5 +31,11 @@ class Book extends Model
     {
         return $this->belongsToMany(User::class, 'reservations');
     }
+
+    public function bookBorrows()
+    {
+        return $this->hasMany(BookReservation::class);
+    }
 }
+
 

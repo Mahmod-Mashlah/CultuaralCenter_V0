@@ -2,17 +2,69 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+use App\Traits\HttpResponse;
+use Illuminate\Http\Request;
 use App\Models\BookReservation;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\BookReservationsResource;
 use App\Http\Requests\StoreBookReservationRequest;
 use App\Http\Requests\UpdateBookReservationRequest;
-use App\Models\Book;
-use App\Traits\HttpResponse;
+use App\Models\User;
 
 class BookReservationController extends Controller
 {
     use HttpResponse ;
+
+   public function allReservations()  {
+    return BookReservationsResource::collection(
+        BookReservation::all() ) ;
+    // $reservations = BookReservation::all() ;
+    // return $reservations ;
+    }
+    public function acceptReservation(Request $request, $id)
+{
+    $booking = BookReservation::findOrFail($id);
+    $booking->status = 'accepted';
+
+    $bookDetails = Book::find($booking->book_id);
+    $UserDetails = User::find($booking->user_id);
+
+
+
+    // if ($booking->status = 'accepted' && $bookDetails->amount>=1 ) {
+    //     $bookDetails->amount = $bookDetails->amount -1 ;
+    // }
+    $booking->save();
+
+    // dd($bookDetails->amount);
+    // $book = Book::findOrFail($request->book_id);
+    // $booking->book_id;
+    // $theBook->amount = $theBook->amount -1 ;
+
+    // Additional logic based on your requirements
+    return $this->success(["reservation" => $booking ,
+                                 "book" => $bookDetails ,
+                                 "user" => $UserDetails ,
+],'Book Reservation has been accepted');
+}
+
+public function declineReservation(Request $request, $id)
+{
+    $booking = BookReservation::findOrFail($id);
+    $booking->status = 'declined';
+    $booking->save();
+
+    $bookDetails = Book::find($booking->book_id);
+    $UserDetails = User::find($booking->user_id);
+
+    // Additional logic based on your requirements
+    return $this->success(["reservation" => $booking ,
+                                 "book" => $bookDetails ,
+                                 "user" => $UserDetails ,
+],'Book Reservation has been declined ');
+}
+
     /**
      * Display a listing of the resource.
      */
@@ -20,9 +72,6 @@ class BookReservationController extends Controller
     {
           return BookReservationsResource::collection(
            BookReservation::where('user_id',Auth::user()->id)->get() ) ; // get bookReservations thats users are authenticated
-
-
-
     }
 
 
@@ -35,20 +84,23 @@ class BookReservationController extends Controller
             'book_id'   => $request->book_id ,
             'from_date' => $request->from_date ,
             'to_date'   => $request->to_date ,
+            'status'    => null,
         ]);
 
         $book = Book::findOrFail($request->book_id);
-        $book->amount= $book->amount -1 ;
 
-        if ($book->book->amount > 0 ) {
 
-            return new BookReservationsResource($bookReservation) ;
-        }
+        if ($book->amount > 0 ) {
 
-        else {
-            return $this->error([],'There is no available book at the moment . Try again later ',404);
-        }
-    }
+            return $this->success(new BookReservationsResource($bookReservation),
+                                      'Book Reservation has been created , please wait until the resquest accepted ') ;
+                                    }
+        else
+        {
+         return $this->error([],'There is no available book at the moment . Try again later ',404);
+
+                }
+            }
 
 
     public function show(BookReservation $bookReservation)

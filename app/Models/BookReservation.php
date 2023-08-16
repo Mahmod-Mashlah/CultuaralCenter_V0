@@ -15,6 +15,7 @@ class BookReservation extends Model
     'book_id',
     'from_date',
     'to_date',
+    'status',
 
     ] ;
 

@@ -39,9 +39,21 @@ Route::group(['middleware'=>['auth:sanctum']],function () {
     Route::post('/ratings', [RatingController::class, 'store'])->name('ratings.store');
     Route::put('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
 
-    // Book Reservations :
+    // User Book Reservations :
 
     Route::resource('/book-reservations', BookReservationController::class)->only(['index','store']);;
+
+    // Employee Book Reservations :
+
+    // show all Books Reservations :
+
+    Route::get('/all-books-reservations',[BookReservationController::class, 'allReservations'] )->name('book_borrows.accept');
+
+
+    // Accept Or Decline Book Reservation :
+
+    Route::post('/book-reservations/accept/{id}',[BookReservationController::class, 'acceptReservation'] )->name('book_borrows.accept');
+    Route::post('/book-reservations/decline/{id}',[BookReservationController::class, 'declineReservation'] )->name('book_borrows.decline');
 
  });
 

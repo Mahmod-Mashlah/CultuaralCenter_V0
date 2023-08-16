@@ -61,6 +61,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Book::class, 'book_reservations');
     }
 
+    public function bookBorrows()
+    {
+        return $this->hasMany(BookReservation::class);
+    }
+
     /**
      * The accessors to append to the model's array form.
      *

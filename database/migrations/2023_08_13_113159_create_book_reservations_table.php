@@ -17,6 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('book_id');
             $table->date('from_date');
             $table->date('to_date');
+            $table->string('status')->default(null)->nullable();
+
 
             // Relations :
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

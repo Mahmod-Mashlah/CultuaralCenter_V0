@@ -18,23 +18,27 @@ class BookReservationsResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => (string)$this-> id ,
+            "Reservation number"." ".$this-> id => [
+
+                'id' => (string)$this-> id ,
 
 
             'book_id' => $this-> book_id ,
+            'user_id' => $this-> user_id ,
             'from_date' => $this-> from_date ,
             'to_date' => $this-> to_date ,
+            'status' => $this-> status ,
 
             'created_at'=>$this->created_at,
             'updated_at'=>$this->updated_at,
 
             'Book Details' => [
 
-                // 'id'     =>  (string)$this->book-> id ,
-                // 'name'   =>   $this->book->name  ,
-                // 'author' =>   $this->book->author  ,
-                // 'amount' =>   $this->book->amount  ,
-                // 'row'    =>   $this->book->row  ,
+                'id'     =>  (string)$this->book-> id ,
+                'name'   =>   $this->book->name  ,
+                'author' =>   $this->book->author  ,
+                'amount' =>   $this->book->amount  ,
+                'row'    =>   $this->book->row  ,
 
 
 
@@ -42,11 +46,14 @@ class BookReservationsResource extends JsonResource
 
             'User Details' => [
 
-                // 'id'     =>  (string)$this->user-> id ,
-                // 'name'   =>   $this->user->name  ,
-                // 'email' =>   $this->user->email  ,
+                'id'     =>  (string)$this->user-> id ,
+                'name'   =>   $this->user->name  ,
+                'email' =>   $this->user->email  ,
 
             ]
+
+            ],
+
 
         ];
 
