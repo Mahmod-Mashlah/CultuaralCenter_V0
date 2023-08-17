@@ -51,12 +51,12 @@
                       <p>Add a Plan</p>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  {{-- <li class="nav-item">
                     <a href="{{ url('/web/plans/update', []) }}" class="nav-link">
                       <i class="far fa fa-edit nav-icon" aria-hidden="true"></i>
                       <p>Update a Plan</p>
                     </a>
-                  </li>
+                  </li> --}}
 
                 </ul>
               </li>
@@ -77,12 +77,12 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="{{ url('/web/employees/add', []) }}" class="nav-link ">
                           <i class="far fa fa-plus-square nav-icon"></i>
                           <p>Add an Employee</p>
                         </a>
-                      </li>
+                      </li> --}}
 
                   <li class="nav-item">
                     <a href="{{ url('/web/employees/edit-permissions', []) }}" class="nav-link">

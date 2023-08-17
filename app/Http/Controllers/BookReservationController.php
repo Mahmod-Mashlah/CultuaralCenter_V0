@@ -33,7 +33,7 @@ class BookReservationController extends Controller
         $bookDetails = Book::find($booking->book_id);
         $UserDetails = User::find($booking->user_id);
 
-        $bookDetails->amount->update(['amount' => $bookDetails->amount-1 ]);
+        // $bookDetails->amount->update(['amount' => $bookDetails->amount-1 ]);
 
 
 
