@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('book_id');
             $table->date('from_date');
             $table->date('to_date');
-            $table->string('status')->default(null)->nullable();
+            $table->string('status')->default('waiting')->nullable();
 
 
             // Relations :

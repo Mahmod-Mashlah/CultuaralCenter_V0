@@ -27,13 +27,13 @@ class StoreBookReservationRequest extends FormRequest
 
             // 'user_id'   => ['required','exists:users,id'],
             'book_id'   => ['required','exists:books,id'],
-            'from_date' => ['required','date','after:2023-08-01'] ,
+            'from_date' => ['required','date','after:2023-08-30'] ,
 
             'to_date'   => [
                 'required',
                 'date',
                 'after:from_date',
-                'after:'.date('Y-m-d', strtotime('+2 days')),
+                // 'after:'.date('Y-m-d', strtotime('+2 days')),
 
                 // new DateAfterWithTwoDays($this->input('from_date')),
                 // new AfterDate('from_date'),
