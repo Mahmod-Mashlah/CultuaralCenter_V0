@@ -2,12 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Rating;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+use App\Models\Rating;
+use Illuminate\Database\Seeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,17 +17,36 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+            // \App\Models\User::factory(10)->create();
 
         //Seeding Types For Lectures and Plays :
         $this->call(TypeLectureSeeder::class);
         $this->call(TypePlaySeeder::class);
+
         // Department Seeder :
         $this->call(DepartmentSeeder::class);
+
+        // Book Seeder :
         $this->call(BookSeeder::class);
+
         // Plan Seeder :
         // $this->call(PlanSeeder::class);
 
-        // \App\Models\User::factory(10)->create();
+
+        // Rating Seeder :
+
+        $this->call(RatingSeeder::class);
+
+        // Admin seeding :
+
+        User::factory()->create([
+            'name' => 'a',
+            'email' => 'a@gmail.com',
+            'type' => 'admin',
+            'password' => Hash::make('password'),
+        ]);
+
+        // Users Seeder
 
        for ($i=1; $i <= 10 ; $i++) {
         \App\Models\User::factory()->create([
@@ -37,20 +57,10 @@ class DatabaseSeeder extends Seeder
         ]);
        }
 
-        \App\Models\User::factory()->create([
-            'name' => 'a',
-            'email' => 'a@gmail.com',
-            'type' => 'admin',
-            'password' => Hash::make('password'),
-        ]);
 
-        $usersCount = User::all()->count() ;
-        for ($i=1; $i <=  $usersCount; $i++) {
-        Rating::factory()->create([
-            'user_id'=> $i,
-            'rating' =>  rand(1, 5)  ,
-        ]);
-         }
+       // General Report Seeder :
+       $this->call(GeneralReportSeeder::class);
+
 
     }
 }

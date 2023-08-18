@@ -18,7 +18,7 @@ class BookReservationsResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            "Reservation number"." ".$this-> id => [
+            // "Reservation number"." ".$this-> id => [
 
                 'id' => (string)$this-> id ,
 
@@ -52,7 +52,7 @@ class BookReservationsResource extends JsonResource
 
             ]
 
-            ],
+            // ],
 
 
         ];

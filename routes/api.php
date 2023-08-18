@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GeneralReportController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -54,6 +55,10 @@ Route::group(['middleware'=>['auth:sanctum']],function () {
 
     Route::post('/book-reservations/accept/{id}',[BookReservationController::class, 'acceptReservation'] )->name('book_borrows.accept');
     Route::post('/book-reservations/decline/{id}',[BookReservationController::class, 'declineReservation'] )->name('book_borrows.decline');
+
+    // Index and Store General Reports :
+
+    Route::resource('/general-reports', GeneralReportController::class)->only(['index','store']);
 
  });
 
