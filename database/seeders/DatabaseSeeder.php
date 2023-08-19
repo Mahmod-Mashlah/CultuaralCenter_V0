@@ -33,11 +33,9 @@ class DatabaseSeeder extends Seeder
         // $this->call(PlanSeeder::class);
 
 
-        // Rating Seeder :
 
-        $this->call(RatingSeeder::class);
 
-        // Admin seeding :
+        // Admin seeding And Admin Rating :
 
         User::factory()->create([
             'name' => 'a',
@@ -45,6 +43,11 @@ class DatabaseSeeder extends Seeder
             'type' => 'admin',
             'password' => Hash::make('password'),
         ]);
+
+        Rating::factory()->create([
+            'user_id' => '1',
+            'rating' =>  "5",
+            ]);
 
         // Users Seeder
 
@@ -61,6 +64,8 @@ class DatabaseSeeder extends Seeder
        // General Report Seeder :
        $this->call(GeneralReportSeeder::class);
 
+       // Rating Seeder :
 
+       $this->call(RatingSeeder::class);
     }
 }

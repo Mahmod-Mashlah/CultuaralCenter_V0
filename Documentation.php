@@ -266,5 +266,29 @@ composer remove laravel/jetstream
 
  */
 
+ ////////////////////////////////////////////////////////////////////////////////////////
+/*
+     Laratrust
+
+     composer require santigarcor/laratrust
+
+     php artisan vendor:publish --tag="laratrust"
+
+    php artisan config:clear
+
+
+    php artisan laratrust:setup
+
+    in user model :
+
+        use trait : HasRolesAndPermissions
+
+    composer dump-autoload
+
+    php artisan migrate
+
+
+
+*/
 
 ?>
