@@ -79,6 +79,14 @@
                         Cultural Center
                     </span>
 
+                    @error('loginFailedMessage')
+
+                    <button type="button" class="btn text-warning col-15 toastrDefaultError" width="100px" hight="100px">
+                        Invalid Email Or Password !!!!
+                      </button>
+
+                    @enderror
+
                     <div class="wrap-input100 validate-input" data-validate="Enter username">
                         <input class="input100 @error('email') is-invalid @enderror" id="email" type="email" name="email" placeholder="Email"  required >
 
@@ -101,6 +109,9 @@
                                             </span>
                                         @enderror
                     </div>
+
+
+
 
                     <div class="container-login100-form-btn row mb-0 form-group">
                         <div class="col-md-8 offset-md-4">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class WebLoginController extends Controller
 {
@@ -26,6 +27,10 @@ class WebLoginController extends Controller
         }
 
         // Authentication failed, redirect back to login form with error message
-        return redirect()->route('login')->withErrors(['message' => 'Invalid credentials']);
+    //    $loginFailed=  Alert::success('Login Failed !', 'You must enter correct Username and password ');
+        return redirect()->route('login',
+        // compact('loginFailed',)
+        )
+        ->withErrors(['loginFailedMessage' => 'Invalid credentials']);
     }
 }
