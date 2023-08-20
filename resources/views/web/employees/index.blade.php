@@ -87,6 +87,13 @@
                                             @if ($employee->type == 'user')
                                             class="badge bg-orange disabled color-palette">userTesting
                                             @endif
+
+                                            {{-- @if (Carbon\Carbon::parse($plan->date) > Carbon\Carbon::parse($firstDayNextMonth) ) --}}
+                                             {{-- ->isAfter($futureDate) --}}
+                                            {{-- <a href="/web/plans/{{ $plan->id }}/edit" class="btn btn-primary" type="button">Edit</a>
+                                            @endif --}}
+
+
                                             {{-- @if ($employee->type == 'Theatre')
                                             class="badge bg-orange disabled color-palette">
                                             @endif

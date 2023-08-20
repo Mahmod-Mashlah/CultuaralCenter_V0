@@ -69,6 +69,26 @@ class DatabaseSeeder extends Seeder
         ]);
        }
 
+       $theatreEmployee = User::get()
+                    ->where('id', 3)
+                    ->first();
+        $theatreEmployee->addRole('theatre-employee');
+
+        $libraryEmployee = User::get()
+                    ->where('id', 4)
+                    ->first();
+        $libraryEmployee->addRole('library-employee');
+
+        $activityEmployee = User::get()
+                    ->where('id', 5)
+                    ->first();
+        $activityEmployee->addRole('activity-employee');
+
+        $teacher = User::get()
+                    ->where('id', 6)
+                    ->first();
+        $teacher->addRole('teacher');
+
 
        // General Report Seeder :
        $this->call(GeneralReportSeeder::class);

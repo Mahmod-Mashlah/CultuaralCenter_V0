@@ -87,6 +87,14 @@
 
                     @enderror
 
+                    @error('notAdmin')
+
+                    <button type="button" class="btn text-warning col-15 toastrDefaultError" width="100px" hight="100px">
+                        You are not the Admin !! , Not Authorized
+                      </button>
+
+                    @enderror
+
                     <div class="wrap-input100 validate-input" data-validate="Enter username">
                         <input class="input100 @error('email') is-invalid @enderror" id="email" type="email" name="email" placeholder="Email"  required >
 

@@ -67,4 +67,6 @@ Route::middleware('web-auth')->group(function ()
     Route::get('/web/employees/edit-permissions', function () {
         return view('web.employees.edit-permissions');
     })->name('employees-edit-permissions');
+
+    // Route::post('/web/employees/edit-permissions', [EmployeeController::class, 'update'])->name('role.change');
 });

@@ -84,11 +84,18 @@
                                             <span class="badge  disabled bg-primary color-palette">
                                                 <select class="selectpicker col-md-12 " style="font-size: 18px;" placeholder="">
 
+                                                    {{-- @foreach($roles as $role)
+
+                                                    <option value="{{ $i }}" {{ $i == 3 ? 'selected' : '' }}>{{ $i }}</option>
+                                                    @endforeach --}}
+
                                                     <option>Teacher </option>
                                                     <br>
                                                     <option>User </option>
 
                                                 </select>
+
+
                                             </span>
                                         </td>
 

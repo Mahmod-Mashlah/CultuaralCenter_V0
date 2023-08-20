@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class WebLoginController extends Controller
@@ -20,10 +22,33 @@ class WebLoginController extends Controller
             'password' => ['required'],
         ]);
 
+
+        $user = User::get()
+                    ->where('email', $request->email)
+                    ->first()
+                    ;
+        $userID = $user->id ;
+
+
+        $admin = User::get()
+                    ->where('id', 1)
+                    ->first()
+                    ;
+        $adminID = $admin->id ;
+
         // Attempt to log in the user
-        if (auth()->attempt($credentials)) {
-            // Authentication successful, redirect to dashboard or desired page
+        if (auth()->attempt($credentials )) {
+            if ( $userID == $adminID) {
+                // Authentication successful, redirect to dashboard or desired page
             return redirect('/');
+            }
+            else {
+                return redirect()->route('login',
+        // compact('loginFailed',)
+        )
+        ->withErrors(['notAdmin' => 'Invalid credentials']);
+            }
+
         }
 
         // Authentication failed, redirect back to login form with error message

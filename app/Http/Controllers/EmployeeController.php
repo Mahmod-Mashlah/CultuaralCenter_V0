@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Employee;
+use Laratrust\Models\Role;
+use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
@@ -88,15 +90,20 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        //
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateEmployeeRequest $request, Employee $employee)
+    public function update(Request $request)
     {
-        //
+        $user = User::get()->where('id',$request->id);
+        $user->removeRole('user');
+        $user->assignRole('teacher');
+
+    return redirect()->back()->with('status', 'Role changed successfully.');
+
     }
 
     /**

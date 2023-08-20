@@ -7,10 +7,23 @@ use App\Models\User;
 use App\Models\Rating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Laratrust\Traits\HasRolesAndPermissions;
 
 class WelcomeController extends Controller
-{
+{ use HasRolesAndPermissions;
     //
+
+    public function updateRole(Request $request) {
+
+    // $user = Auth::user();
+
+    // $user->removeRole('user');
+    // $user->assignRole('teacher');
+
+    // return redirect()->back()->with('status', 'Role changed successfully.');
+
+    }
     public function dashboard()
     {
         // DAtA Counts :
