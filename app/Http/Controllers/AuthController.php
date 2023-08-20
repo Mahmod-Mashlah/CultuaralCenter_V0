@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Laratrust\Laratrust;
 use App\Traits\HttpResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\LoginUserRequest;
 use App\Http\Requests\StoreUserRequest;
+use Laratrust\Traits\HasRolesAndPermissions;
 
 class AuthController extends Controller
 {
-    use HttpResponse ; // this is my trait
+    use HttpResponse,HasRolesAndPermissions ; // this is my trait
 
 
     public function login(LoginUserRequest $request)
@@ -25,8 +29,23 @@ class AuthController extends Controller
 
         $user = User::where('email',$request->email)->first();
 
+        // $user->addRole('user');
+
+        $role = DB::table('role_user')
+                    ->where('user_id', $user->id)
+                    ->first()
+                    ->role_id
+                    ;
+        $roleName = DB::table('roles')
+                    ->where('id', $role)
+                    ->first()
+                    ->name
+                    ;
+
         return $this->success([
             'user' => $user,
+            'role' => $role,
+            'role-name' => $roleName,
             'token'=> $user->createToken('API Token of'.$user->name)->plainTextToken
         ]);
 
@@ -45,8 +64,23 @@ class AuthController extends Controller
 
         ]);
 
+        $user->addRole('user');
+
+        $role = DB::table('role_user')
+                    ->where('user_id', $user->id)
+                    ->first()
+                    ->role_id
+                    ;
+        $roleName = DB::table('roles')
+                    ->where('id', $role)
+                    ->first()
+                    ->name
+                    ;
+
         return $this -> success([
             'user' => $user,
+            'role' => $role,
+            'role-name' => $roleName,
             'token'=> $user->createToken('API Token of ' .$user->name)->plainTextToken ,
         ]);
     }

@@ -7,11 +7,13 @@ use App\Models\Rating;
 use Illuminate\Database\Seeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Laratrust\Traits\HasRolesAndPermissions;
 
 
 class DatabaseSeeder extends Seeder
-{
+{   use HasRolesAndPermissions;
     /**
      * Seed the application's database.
      */
@@ -33,7 +35,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(PlanSeeder::class);
 
 
-
+        // Roles Laratrust Seeder :
+        $this->call(LaratrustSeeder::class);
 
         // Admin seeding And Admin Rating :
 
@@ -42,7 +45,13 @@ class DatabaseSeeder extends Seeder
             'email' => 'a@gmail.com',
             'type' => 'admin',
             'password' => Hash::make('password'),
+            // 'role' => $role,
+            // 'role-name' => $roleName,
         ]);
+        $admin = User::get()
+                    ->where('id', 1)
+                    ->first();
+        $admin->addRole('admin');
 
         Rating::factory()->create([
             'user_id' => '1',
@@ -67,5 +76,8 @@ class DatabaseSeeder extends Seeder
        // Rating Seeder :
 
        $this->call(RatingSeeder::class);
+
+
+
     }
 }

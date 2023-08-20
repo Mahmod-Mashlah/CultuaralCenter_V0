@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('teacher_name');
             $table->integer('attenders_count')->default(0);
-            $table->float('attenders_percent',4,2,true)->default(0);
+            $table->float('attenders_percent')->default(0);
             $table->integer('sessions_count')->default(0);
             $table->timestamps();
         });
