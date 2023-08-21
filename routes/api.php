@@ -1,13 +1,15 @@
 <?php
 
-use App\Http\Controllers\GeneralReportController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\BookReservationController;
-use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\LectureController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\GeneralReportController;
+use App\Http\Controllers\BookReservationController;
+use App\Http\Controllers\PlayController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -25,6 +27,12 @@ Route::apiresource('/departments', DepartmentController::class)->only(['index','
 Route::post('/books/search', [BookController::class, 'search']);
 Route::post('/departments/search', [DepartmentController::class, 'search']);
 
+  // Lectures :
+    Route::resource('/lectures', LectureController::class)->only(['index','show']);
+    Route::post('/lectures/search', [LectureController::class, 'search']);//
+  // Plays :
+    Route::resource('/plays', PlayController::class)->only(['index','show']);
+    Route::post('/plays/search', [PlayController::class, 'search']);//
 // protected Routes (With Auth)
 
 // Route::prefix()-> group(['middleware'=>['auth:sanctum']],function () {} //to implement prefix
@@ -59,6 +67,11 @@ Route::group(['middleware'=>['auth:sanctum']],function () {
     // Index and Store General Reports :
 
     Route::resource('/general-reports', GeneralReportController::class)->only(['index','store']);
+
+    // Lectures :
+    Route::resource('/lectures', LectureController::class)->except(['index','show']);
+    Route::resource('/plays', PlayController::class)->except(['index','show']);
+
 
  });
 

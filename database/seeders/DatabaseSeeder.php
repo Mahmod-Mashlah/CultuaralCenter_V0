@@ -7,6 +7,7 @@ use App\Models\Rating;
 use Illuminate\Database\Seeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Seeders\PlaySeeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Laratrust\Traits\HasRolesAndPermissions;
@@ -32,8 +33,12 @@ class DatabaseSeeder extends Seeder
         $this->call(BookSeeder::class);
 
 
-        // Book Seeder :
+        // Lecture Seeder :
         $this->call(LectureSeeder::class);
+
+
+        // Play Seeder :
+        $this->call(PlaySeeder::class);
 
         // Plan Seeder :
         // $this->call(PlanSeeder::class);
