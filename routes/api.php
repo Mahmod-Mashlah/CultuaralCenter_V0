@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -33,6 +34,9 @@ Route::post('/departments/search', [DepartmentController::class, 'search']);
   // Plays :
     Route::resource('/plays', PlayController::class)->only(['index','show']);
     Route::post('/plays/search', [PlayController::class, 'search']);//
+  // Activities :
+    Route::resource('/activities', ActivityController::class)->only(['index','show']);
+    Route::post('/activities/search', [PlayController::class, 'search']);//
 // protected Routes (With Auth)
 
 // Route::prefix()-> group(['middleware'=>['auth:sanctum']],function () {} //to implement prefix
@@ -68,9 +72,10 @@ Route::group(['middleware'=>['auth:sanctum']],function () {
 
     Route::resource('/general-reports', GeneralReportController::class)->only(['index','store']);
 
-    // Lectures :
+    // Lectures & Plays & Activities:
     Route::resource('/lectures', LectureController::class)->except(['index','show']);
     Route::resource('/plays', PlayController::class)->except(['index','show']);
+    Route::resource('/activities', ActivityController::class)->except(['index','show']);
 
 
  });
