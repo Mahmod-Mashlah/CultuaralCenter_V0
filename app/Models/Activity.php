@@ -22,8 +22,9 @@ class Activity extends Model
         'teacher_experience',
         'session_start_time',
         'session_end_time',
+        'days',
 
-        // days
+        //
 
     ];
 

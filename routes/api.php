@@ -36,7 +36,7 @@ Route::post('/departments/search', [DepartmentController::class, 'search']);
     Route::post('/plays/search', [PlayController::class, 'search']);//
   // Activities :
     Route::resource('/activities', ActivityController::class)->only(['index','show']);
-    Route::post('/activities/search', [PlayController::class, 'search']);//
+    Route::post('/activities/search', [ActivityController::class, 'search']);//
 // protected Routes (With Auth)
 
 // Route::prefix()-> group(['middleware'=>['auth:sanctum']],function () {} //to implement prefix

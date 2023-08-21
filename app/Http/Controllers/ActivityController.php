@@ -133,6 +133,7 @@ public function messages()
             'teacher_experience' => $request-> teacher_experience,
             'session_start_time' => $request-> session_start_time,
             'session_end_time'   => $request-> session_end_time,
+            'days'   => $request-> days,
         ]);
 
         return $this->success( new ActivitiesResource($activity) , 'Activity has added succussfully')  ;

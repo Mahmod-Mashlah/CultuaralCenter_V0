@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('room_number');
             $table->string('teacher_name');
             $table->string('teacher_experience');
+            $table->string('days');
             // days :
             // $table->unsignedBigInteger('week_days');
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
