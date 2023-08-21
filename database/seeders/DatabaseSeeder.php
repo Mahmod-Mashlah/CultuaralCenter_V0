@@ -55,6 +55,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'a@gmail.com',
             'type' => 'admin',
             'password' => Hash::make('password'),
+            'birthdate' =>  '2000-11-11',
+            'serial_number' =>  '09876543210',
+            'phone_number' =>  '0987070814',
+            'address' =>  'Damascus, Airplane Street , IT College , Internet_room',
             // 'role' => $role,
             // 'role-name' => $roleName,
         ]);
@@ -70,12 +74,16 @@ class DatabaseSeeder extends Seeder
 
         // Users Seeder
 
-       for ($i=1; $i <= 10 ; $i++) {
+       for ($i=1; $i <= 9 ; $i++) {
         \App\Models\User::factory()->create([
             'name' => 'a'."$i",
             'type' => 'user',
             'email' => 'a'."$i".'@gmail.com',
             'password' => Hash::make('password'),
+            'birthdate' =>  '2000-01-0'.$i,
+            'serial_number' =>  '0123456789'.$i,
+            'phone_number' =>  '099999999'.$i,
+            'address' =>  'Damascus, Airplane Street , IT College , Internet_room',
         ]);
        }
 

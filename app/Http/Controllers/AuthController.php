@@ -61,6 +61,10 @@ class AuthController extends Controller
             'name' => $request -> name ,
             'email' => $request -> email ,
             'password' => Hash::make($request -> password) ,
+            'birthdate' => $request -> birthdate ,
+            'serial_number' => $request -> serial_number ,
+            'phone_number' => $request -> phone_number ,
+            'address' => $request -> address ,
 
         ]);
 
