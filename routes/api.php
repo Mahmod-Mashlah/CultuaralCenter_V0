@@ -1,16 +1,17 @@
 <?php
 
-use App\Http\Controllers\ActivityController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\PlayController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\LectureController;
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\GeneralReportController;
 use App\Http\Controllers\BookReservationController;
-use App\Http\Controllers\PlayController;
+use App\Http\Controllers\LectureReservationController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -76,6 +77,40 @@ Route::group(['middleware'=>['auth:sanctum']],function () {
     Route::resource('/lectures', LectureController::class)->except(['index','show']);
     Route::resource('/plays', PlayController::class)->except(['index','show']);
     Route::resource('/activities', ActivityController::class)->except(['index','show']);
+
+
+
+     // Activity Teacher Lecture Reservations :
+
+     Route::resource('/lecture-reservations', LectureReservationController::class)->only(['index','store']);;
+
+     // Employee Lecture Reservations :
+
+     // show all Lectures Reservations :
+
+     Route::get('/all-lectures-reservations',[LectureReservationController::class, 'allReservations'] )->name('lecture_borrows.accept');
+
+
+     // Accept Or Decline Lecture Reservation :
+
+     Route::post('/lecture-reservations/accept/{id}',[LectureReservationController::class, 'acceptReservation'] )->name('lecture_borrows.accept');
+     Route::post('/lecture-reservations/decline/{id}',[LectureReservationController::class, 'declineReservation'] )->name('lecture_borrows.decline');
+
+     // Activity Teacher Play Reservations :
+
+     Route::resource('/play-reservations', PlayReservationController::class)->only(['index','store']);;
+
+     // Employee Play Reservations :
+
+     // show all Plays Reservations :
+
+     Route::get('/all-plays-reservations',[PlayReservationController::class, 'allReservations'] )->name('play_borrows.accept');
+
+
+     // Accept Or Decline Play Reservation :
+
+     Route::post('/play-reservations/accept/{id}',[PlayReservationController::class, 'acceptReservation'] )->name('play_borrows.accept');
+     Route::post('/play-reservations/decline/{id}',[PlayReservationController::class, 'declineReservation'] )->name('play_borrows.decline');
 
 
  });
