@@ -11,7 +11,9 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\GeneralReportController;
 use App\Http\Controllers\BookReservationController;
+use App\Http\Controllers\PlayReservationController;
 use App\Http\Controllers\LectureReservationController;
+use App\Http\Controllers\ActivityReservationController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -111,6 +113,22 @@ Route::group(['middleware'=>['auth:sanctum']],function () {
 
      Route::post('/play-reservations/accept/{id}',[PlayReservationController::class, 'acceptReservation'] )->name('play_borrows.accept');
      Route::post('/play-reservations/decline/{id}',[PlayReservationController::class, 'declineReservation'] )->name('play_borrows.decline');
+
+     // Activity Teacher Activity Reservations :
+
+     Route::resource('/activity-reservations', ActivityReservationController::class)->only(['index','store']);;
+
+     // Employee Activity Reservations :
+
+     // show all Activitys Reservations :
+
+     Route::get('/all-activities-reservations',[ActivityReservationController::class, 'allReservations'] )->name('activity_borrows.accept');
+
+
+     // Accept Or Decline Activity Reservation :
+
+     Route::post('/activity-reservations/accept/{id}',[ActivityReservationController::class, 'acceptReservation'] )->name('activity_borrows.accept');
+     Route::post('/activity-reservations/decline/{id}',[ActivityReservationController::class, 'declineReservation'] )->name('activity_borrows.decline');
 
 
  });

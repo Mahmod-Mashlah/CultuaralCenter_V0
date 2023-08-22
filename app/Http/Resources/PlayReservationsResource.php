@@ -27,15 +27,15 @@ class PlayReservationsResource extends JsonResource
 
             'Play Details' => [
 
-                'id'     =>  (string)$this->lecture-> id ,
-                'name'   =>   $this->lecture->name  ,
-                'type'   =>   $this->lecture->type  ,
-                'startdate'   =>   $this->lecture->startdate  ,
-                'starttime'   =>   $this->lecture->starttime  ,
-                'end_time'   =>   $this->lecture->end_time  ,
-                'target_people'   =>   $this->lecture->target_people  ,
-                'teacher_experience'   =>   $this->lecture->teacher_experience  ,
-                'teacher_name'   =>   $this->lecture->teacher_name  ,
+                'id'     =>  (string)$this->play-> id ,
+                'name'   =>   $this->play->name  ,
+                'type'   =>   $this->play->type  ,
+                'startdate'   =>   $this->play->startdate  ,
+                'starttime'   =>   $this->play->starttime  ,
+                'end_time'   =>   $this->play->end_time  ,
+                'target_people'   =>   $this->play->target_people  ,
+                'teacher_experience'   =>   $this->play->teacher_experience  ,
+                'teacher_name'   =>   $this->play->teacher_name  ,
 
             ] ,
 
