@@ -24,7 +24,7 @@ class StorePlayReservationRequest extends FormRequest
         return [
 
             // 'user_id'   => ['required','exists:users,id'],
-            'lecture_id'   => ['required','exists:lectures,id'],
+            'play_id'   => ['required','exists:plays,id'],
        ];
     }
 }
